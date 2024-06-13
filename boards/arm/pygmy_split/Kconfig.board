@@ -1,0 +1,16 @@
+# Wubbo board configuration
+
+# Copyright (c) 2024 Hugh Lam
+# SPDX-License-Identifier: MIT
+
+config BOARD_PYGMY
+	bool "pygmy"
+	depends on SOC_NRF52840_QIAA
+
+config BOARD_PYGMY_RIGHT
+	bool "pygmy right"
+	depends on SOC_NRF52840_QIAA
+
+config BOARD_PYGMY_LEFT
+	bool "pygmy left"
+	depends on SOC_NRF52840_QIAA
