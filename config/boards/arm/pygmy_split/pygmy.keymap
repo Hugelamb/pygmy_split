@@ -114,7 +114,7 @@
 &kp Z       &kp X       &kp C       &kp D            &kp V                       &kp K           &kp H        &kp COMMA    &kp DOT     &kp FSLH
                                     &mt LCTRL ESC    &lt NAV SPC                 &lt SYM RET     &bs_del
 			>;
-    };
+        };
 
         symbol_layer {
             display-name = "SYM";
@@ -137,5 +137,5 @@
 
         };
 
-
+    };
 };
