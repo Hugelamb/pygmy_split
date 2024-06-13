@@ -13,10 +13,9 @@
 #define DEF 0
 #define COL 1
 #define SYM 2       // Commonly used symbols, such as theta, omega, beta, alpha, etc
-
-#define NAV 4       // arrow keys, PGUP/PGDN, back, forward, window swappers, 
-#define FUN 3       
-#define SYS 4
+#define NAV 3       // arrow keys, PGUP/PGDN, back, forward, window swappers, 
+#define FUN 4       
+#define SYS 5
 #define MOU 6
 
 // Desktop window management and tab nav shortcuts
