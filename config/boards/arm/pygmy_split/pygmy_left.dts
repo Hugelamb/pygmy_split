@@ -1,0 +1,17 @@
+/* 
+ *  Created by Hugh Lam (2024)
+ *
+ *  Pygmy .dts file.
+ */
+
+#include <nordic/nrf52840_qiaa.dtsi>
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    model = "pygmy";
+    compatible = ""
+    chosen {
+        zephyr,display = &ls0xx;
+        zmk,kscan = &kscan0;
+    }
+}

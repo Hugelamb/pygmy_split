@@ -1,0 +1,141 @@
+/* 
+ *  Created by Hugh Lam (2024)
+ *
+ *  Pygmy keymap
+ */
+
+ #include <behaviors.dtsi>
+ #include <dt-bindings/zmk/keys.h>
+ #include <dt-bindings/zmk/bt.h>
+ #include <dt-bindings/zmk/ext_power.h>
+
+// Layer defines
+#define DEF 0
+#define COL 1
+#define SYM 2       // Commonly used symbols, such as theta, omega, beta, alpha, etc
+
+#define NAV 4       // arrow keys, PGUP/PGDN, back, forward, window swappers, 
+#define FUN 3       
+#define SYS 4
+#define MOU 6
+
+// Desktop window management and tab nav shortcuts
+#define D_LT   LC(LG(LEFT))     // move desktop left
+#define D_RT   LC(LG(RIGHT))    // move desktop right       
+#define TAB_RT LC(TAB)          // tab switcher forward/right
+#define TAB_LT LC(LS(TAB))      // tab switcher left/back
+//Extra key binds
+#define SWP_POS 
+// behaviour customization
+&mt {
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BSPC DEL N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
+};
+
+
+/ {
+    behaviors {
+        // // Swapper function (may require zmk PR#1366)
+        // swapper: swapper {
+        //     compatible = "zmk,behaviour-tri-state";
+        //     #binding-cells = <0>;
+        //     bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+        //     ignored-key-positions = <SWP_POS>; 
+        // };
+    // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
+        bs_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <MOD_RSFT>;
+        };
+    };
+
+    // macros
+    macros {
+        ZMK_MACRO(inv_qm,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N1 &kp KP_N6 &kp KP_N8>
+                , <&macro_release &kp LALT>;
+        )
+        ZMK_MACRO(alt_tabber,  // adapted from @moutis on ZMK Discord
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LALT>    // leave ALT down to keep menu up
+                     , <&macro_tap &kp TAB>       // open the menu
+                     , <&macro_pause_for_release> // wait until key release
+                     , <&macro_tap &sk_at RALT>   // start timer to release ALT after timeout
+                     , <&macro_release &kp LALT>; // now release the initial hold
+        )
+    };
+
+    // keymap visual
+     /* 
+          ╭───────────────────────╮         ╭───────────────────────╮
+          │      0   1   2   3   4│         │ 5   6   7   8   9     │
+          │     10  11  12  13  14│         │25  16  17  18  19     │
+          │     20  21  22  23  24 ───╮ ╭─── 25  26  27  28  29     │
+          ╰─────────────────╮  30  31 │ │ 32  33 ╭──────────────────╯
+                            ╰─────────╯ ╰────────╯           
+        */
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "DEF";
+
+            bindings = <
+&kp Q       &kp W       &kp E       &kp R           &kp T                   &kp Y       &kp U           &kp I           &kp O           &kp P
+&mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F     &kp G                   &kp H       &mt RSHFT J     &mt LCTRL K     &mt LALT L      &mt LGUI SEMI   
+&kp Z       &kp X       &kp C       &kp V           &kp B                   &kp N       &kp M           &kp COMMA       &kp DOT         &kp FSLH
+                                    &mt LCTRL ESC   &lt NAV SPC             &lt SYM RET &bs_del
+            
+            >;
+
+        };
+
+        cole_layer {
+			bindings = <
+&kp Q       &kp W       &kp F       &kp P            &kp B                       &kp J           &kp L        &kp U        &kp Y       &kp SEMI
+&mt LGUI A  &mt LALT R  &mt LCTRL S &mt LSHFT T      &kp G                       &kp M           &mt RSHFT N  &mt LCTRL E  &mt LALT I  &mt LGUI O     
+&kp Z       &kp X       &kp C       &kp D            &kp V                       &kp K           &kp H        &kp COMMA    &kp DOT     &kp FSLH
+                                    &mt LCTRL ESC    &lt NAV SPC                 &lt SYM RET     &bs_del
+			>;
+    };
+
+        symbol_layer {
+            display-name = "SYM";
+            bindings = <
+&kp EXCL    &kp AT      &kp HASH        &kp DLLR        &kp PRCNT               &kp SLASH       &kp N7      &kp N8      &kp N9      &kp COMMA 
+&kp PLUS    &kp EQUAL   &kp UNDER       &kp MINUS       &kp CARET               &kp N0          &kp N4      &kp N5      &kp N6      &kp DOT   
+&none       &inv_qm     &kp STAR        &kp AMPS        &none                   &kp SEMI        &kp N1      &kp N2      &kp N3      &kp SLASH 
+                                        &kp BSPC        &trans                  &trans          &bs_del                               
+            >;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+&kp LA(F4)  &kp TAB_LT  &kp TAB_RT      &kp LC(F4)      &kp C_VOL_UP            &kp INS         &kp PG_DN    &kp UP       &kp PG_UP    &kp C_AL_CALC 
+&kp LCTRL   &kp LGUI    &kp LALT        &mt LSHFT TAB   &kp C_VOL_DN            &kp HOME        &kp LEFT     &kp DOWN     &kp RIGHT    &kp END       
+&none       &none       &alt_tabber     &kp LS(INS)     &kp C_PP                &none           &kp DEL      &kp C_PREV   &kp C_NEXT   &none         
+                                        &none           &trans                  &trans          &kp SPACE 
+            >;
+
+        };
+
+
+};
