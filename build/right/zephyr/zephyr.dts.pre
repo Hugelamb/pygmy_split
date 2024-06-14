@@ -1,0 +1,1513 @@
+# 0 "C:/Users/Hugh/zmk/zephyr/misc/empty_file.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy_right.dts" 1
+
+
+
+
+
+
+/dts-v1/;
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi" 1 3 4
+
+
+
+
+
+
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/common/mem.h" 1 3 4
+# 8 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf52840.dtsi" 1 3 4
+
+
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/arm/armv7-m.dtsi" 1 3 4
+
+
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "C:/Users/Hugh/zmk/zephyr/dts/common/skeleton.dtsi" 3 4
+/ {
+ #address-cells = <1>;
+ #size-cells = <1>;
+ chosen { };
+ aliases { };
+};
+# 4 "C:/Users/Hugh/zmk/zephyr/dts/arm/armv7-m.dtsi" 2 3 4
+
+/ {
+ soc {
+  #address-cells = <1>;
+  #size-cells = <1>;
+  compatible = "simple-bus";
+  interrupt-parent = <&nvic>;
+  ranges;
+
+  nvic: interrupt-controller@e000e100 {
+   #address-cells = <1>;
+   compatible = "arm,v7m-nvic";
+   reg = <0xe000e100 0xc00>;
+   interrupt-controller;
+   #interrupt-cells = <2>;
+  };
+
+  systick: timer@e000e010 {
+   compatible = "arm,armv7m-systick";
+   reg = <0xe000e010 0x10>;
+  };
+ };
+};
+# 4 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf52840.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 1 3 4
+
+
+
+
+
+
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
+# 8 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 1 3 4
+# 10 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
+# 19 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
+# 34 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_macro.h" 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
+# 18 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
+# 1083 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_loops.h" 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_listify.h" 1 3 4
+# 1084 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_loops.h" 2 3 4
+# 19 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 153 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal_is_eq.h" 1 3 4
+# 154 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 184 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal_util_inc.h" 1 3 4
+# 185 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+
+
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal_util_dec.h" 1 3 4
+# 188 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+
+
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal_util_x2.h" 1 3 4
+# 191 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 35 "C:/Users/Hugh/zmk/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
+# 20 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
+# 11 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 2 3 4
+# 9 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
+# 10 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
+# 11 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/pinctrl/nrf-pinctrl.h" 1 3 4
+# 12 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/pwm/pwm.h" 1 3 4
+# 13 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/common/freq.h" 1 3 4
+# 15 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/override.dtsi" 1 3 4
+# 16 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 24 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf_common.dtsi" 3 4
+/ {
+ pinctrl: pin-controller {
+
+
+
+
+  compatible = "nordic,nrf-pinctrl";
+ };
+
+ rng_hci: entropy_bt_hci {
+  compatible = "zephyr,bt-hci-entropy";
+  status = "okay";
+ };
+
+ sw_pwm: sw-pwm {
+  compatible = "nordic,nrf-sw-pwm";
+  status = "disabled";
+  generator = <&timer1>;
+  clock-prescaler = <0>;
+  #pwm-cells = <3>;
+ };
+};
+
+&systick {
+
+
+
+
+ status = "disabled";
+};
+# 5 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf52840.dtsi" 2 3 4
+
+/ {
+ chosen {
+  zephyr,entropy = &rng;
+  zephyr,flash-controller = &flash_controller;
+ };
+
+ cpus {
+  #address-cells = <1>;
+  #size-cells = <0>;
+
+  cpu@0 {
+   device_type = "cpu";
+   compatible = "arm,cortex-m4f";
+   reg = <0>;
+   #address-cells = <1>;
+   #size-cells = <1>;
+
+   itm: itm@e0000000 {
+    compatible = "arm,armv7m-itm";
+    reg = <0xe0000000 0x1000>;
+    swo-ref-frequency = <32000000>;
+   };
+  };
+ };
+
+ soc {
+  ficr: ficr@10000000 {
+   compatible = "nordic,nrf-ficr";
+   reg = <0x10000000 0x1000>;
+   status = "okay";
+  };
+
+  uicr: uicr@10001000 {
+   compatible = "nordic,nrf-uicr";
+   reg = <0x10001000 0x1000>;
+   status = "okay";
+  };
+
+  sram0: memory@20000000 {
+   compatible = "mmio-sram";
+  };
+
+  clock: clock@40000000 {
+   compatible = "nordic,nrf-clock";
+   reg = <0x40000000 0x1000>;
+   interrupts = <0 1>;
+   status = "okay";
+  };
+
+  power: power@40000000 {
+   compatible = "nordic,nrf-power";
+   reg = <0x40000000 0x1000>;
+   interrupts = <0 1>;
+   status = "okay";
+   #address-cells = <1>;
+   #size-cells = <1>;
+
+   gpregret1: gpregret1@4000051c {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "nordic,nrf-gpregret";
+    reg = <0x4000051c 0x1>;
+    status = "okay";
+   };
+
+   gpregret2: gpregret2@40000520 {
+    #address-cells = <1>;
+    #size-cells = <1>;
+    compatible = "nordic,nrf-gpregret";
+    reg = <0x40000520 0x1>;
+    status = "okay";
+   };
+  };
+
+  radio: radio@40001000 {
+   compatible = "nordic,nrf-radio";
+   reg = <0x40001000 0x1000>;
+   interrupts = <1 1>;
+   status = "okay";
+   ieee802154-supported;
+   ble-2mbps-supported;
+   ble-coded-phy-supported;
+   tx-high-power-supported;
+
+   ieee802154: ieee802154 {
+    compatible = "nordic,nrf-ieee802154";
+    status = "disabled";
+   };
+  };
+
+  uart0: uart@40002000 {
+
+
+   compatible = "nordic,nrf-uarte";
+   reg = <0x40002000 0x1000>;
+   interrupts = <2 1>;
+   status = "disabled";
+  };
+
+  i2c0: i2c@40003000 {
+
+
+
+
+
+
+
+   compatible = "nordic,nrf-twim";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40003000 0x1000>;
+   clock-frequency = <100000>;
+   interrupts = <3 1>;
+   easydma-maxcnt-bits = <16>;
+   status = "disabled";
+  };
+
+  spi0: spi@40003000 {
+
+
+
+
+
+
+
+   compatible = "nordic,nrf-spim";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40003000 0x1000>;
+   interrupts = <3 1>;
+   max-frequency = <((8) * 1000 * 1000)>;
+   easydma-maxcnt-bits = <16>;
+   status = "disabled";
+  };
+
+  i2c1: i2c@40004000 {
+
+
+
+
+
+
+
+   compatible = "nordic,nrf-twim";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40004000 0x1000>;
+   clock-frequency = <100000>;
+   interrupts = <4 1>;
+   easydma-maxcnt-bits = <16>;
+   status = "disabled";
+  };
+
+  spi1: spi@40004000 {
+
+
+
+
+
+
+
+   compatible = "nordic,nrf-spim";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40004000 0x1000>;
+   interrupts = <4 1>;
+   max-frequency = <((8) * 1000 * 1000)>;
+   easydma-maxcnt-bits = <16>;
+   status = "disabled";
+  };
+
+  nfct: nfct@40005000 {
+   compatible = "nordic,nrf-nfct";
+   reg = <0x40005000 0x1000>;
+   interrupts = <5 1>;
+   status = "okay";
+  };
+
+  gpiote: gpiote@40006000 {
+   compatible = "nordic,nrf-gpiote";
+   reg = <0x40006000 0x1000>;
+   interrupts = <6 5>;
+   status = "disabled";
+  };
+
+  adc: adc@40007000 {
+   compatible = "nordic,nrf-saadc";
+   reg = <0x40007000 0x1000>;
+   interrupts = <7 1>;
+   status = "disabled";
+   #io-channel-cells = <1>;
+  };
+
+  timer0: timer@40008000 {
+   compatible = "nordic,nrf-timer";
+   status = "disabled";
+   reg = <0x40008000 0x1000>;
+   cc-num = <4>;
+   max-bit-width = <32>;
+   interrupts = <8 1>;
+   prescaler = <0>;
+  };
+
+  timer1: timer@40009000 {
+   compatible = "nordic,nrf-timer";
+   status = "disabled";
+   reg = <0x40009000 0x1000>;
+   cc-num = <4>;
+   max-bit-width = <32>;
+   interrupts = <9 1>;
+   prescaler = <0>;
+  };
+
+  timer2: timer@4000a000 {
+   compatible = "nordic,nrf-timer";
+   status = "disabled";
+   reg = <0x4000a000 0x1000>;
+   cc-num = <4>;
+   max-bit-width = <32>;
+   interrupts = <10 1>;
+   prescaler = <0>;
+  };
+
+  rtc0: rtc@4000b000 {
+   compatible = "nordic,nrf-rtc";
+   reg = <0x4000b000 0x1000>;
+   cc-num = <3>;
+   interrupts = <11 1>;
+   status = "disabled";
+   clock-frequency = <32768>;
+   prescaler = <1>;
+  };
+
+  temp: temp@4000c000 {
+   compatible = "nordic,nrf-temp";
+   reg = <0x4000c000 0x1000>;
+   interrupts = <12 1>;
+   status = "okay";
+  };
+
+  rng: random@4000d000 {
+   compatible = "nordic,nrf-rng";
+   reg = <0x4000d000 0x1000>;
+   interrupts = <13 1>;
+   status = "okay";
+  };
+
+  ecb: ecb@4000e000 {
+   compatible = "nordic,nrf-ecb";
+   reg = <0x4000e000 0x1000>;
+   interrupts = <14 1>;
+   status = "okay";
+  };
+
+  ccm: ccm@4000f000 {
+   compatible = "nordic,nrf-ccm";
+   reg = <0x4000f000 0x1000>;
+   interrupts = <15 1>;
+   length-field-length-8-bits;
+   status = "okay";
+  };
+
+  wdt: wdt0: watchdog@40010000 {
+   compatible = "nordic,nrf-wdt";
+   reg = <0x40010000 0x1000>;
+   interrupts = <16 1>;
+   status = "okay";
+  };
+
+  rtc1: rtc@40011000 {
+   compatible = "nordic,nrf-rtc";
+   reg = <0x40011000 0x1000>;
+   cc-num = <4>;
+   interrupts = <17 1>;
+   status = "disabled";
+   clock-frequency = <32768>;
+   prescaler = <1>;
+  };
+
+  qdec: qdec0: qdec@40012000 {
+   compatible = "nordic,nrf-qdec";
+   reg = <0x40012000 0x1000>;
+   interrupts = <18 1>;
+   status = "disabled";
+  };
+
+  comp: comparator@40013000 {
+
+
+
+
+
+
+   compatible = "nordic,nrf-comp";
+   reg = <0x40013000 0x1000>;
+   interrupts = <19 1>;
+   status = "disabled";
+   #io-channel-cells = <1>;
+  };
+
+  egu0: swi0: egu@40014000 {
+   compatible = "nordic,nrf-egu", "nordic,nrf-swi";
+   reg = <0x40014000 0x1000>;
+   interrupts = <20 1>;
+   status = "okay";
+  };
+
+  egu1: swi1: egu@40015000 {
+   compatible = "nordic,nrf-egu", "nordic,nrf-swi";
+   reg = <0x40015000 0x1000>;
+   interrupts = <21 1>;
+   status = "okay";
+  };
+
+  egu2: swi2: egu@40016000 {
+   compatible = "nordic,nrf-egu", "nordic,nrf-swi";
+   reg = <0x40016000 0x1000>;
+   interrupts = <22 1>;
+   status = "okay";
+  };
+
+  egu3: swi3: egu@40017000 {
+   compatible = "nordic,nrf-egu", "nordic,nrf-swi";
+   reg = <0x40017000 0x1000>;
+   interrupts = <23 1>;
+   status = "okay";
+  };
+
+  egu4: swi4: egu@40018000 {
+   compatible = "nordic,nrf-egu", "nordic,nrf-swi";
+   reg = <0x40018000 0x1000>;
+   interrupts = <24 1>;
+   status = "okay";
+  };
+
+  egu5: swi5: egu@40019000 {
+   compatible = "nordic,nrf-egu", "nordic,nrf-swi";
+   reg = <0x40019000 0x1000>;
+   interrupts = <25 1>;
+   status = "okay";
+  };
+
+  timer3: timer@4001a000 {
+   compatible = "nordic,nrf-timer";
+   status = "disabled";
+   reg = <0x4001a000 0x1000>;
+   cc-num = <6>;
+   max-bit-width = <32>;
+   interrupts = <26 1>;
+   prescaler = <0>;
+  };
+
+  timer4: timer@4001b000 {
+   compatible = "nordic,nrf-timer";
+   status = "disabled";
+   reg = <0x4001b000 0x1000>;
+   cc-num = <6>;
+   max-bit-width = <32>;
+   interrupts = <27 1>;
+   prescaler = <0>;
+  };
+
+  pwm0: pwm@4001c000 {
+   compatible = "nordic,nrf-pwm";
+   reg = <0x4001c000 0x1000>;
+   interrupts = <28 1>;
+   status = "disabled";
+   #pwm-cells = <3>;
+  };
+
+  pdm0: pdm@4001d000 {
+   compatible = "nordic,nrf-pdm";
+   reg = <0x4001d000 0x1000>;
+   interrupts = <29 1>;
+   status = "disabled";
+  };
+
+  acl: acl@4001e000 {
+   compatible = "nordic,nrf-acl";
+   reg = <0x4001e000 0x1000>;
+   status = "okay";
+  };
+
+  flash_controller: flash-controller@4001e000 {
+   compatible = "nordic,nrf52-flash-controller";
+   reg = <0x4001e000 0x1000>;
+   partial-erase;
+
+   #address-cells = <1>;
+   #size-cells = <1>;
+
+
+   flash0: flash@0 {
+    compatible = "soc-nv-flash";
+    erase-block-size = <4096>;
+    write-block-size = <4>;
+   };
+  };
+
+  ppi: ppi@4001f000 {
+   compatible = "nordic,nrf-ppi";
+   reg = <0x4001f000 0x1000>;
+   status = "okay";
+  };
+
+  mwu: mwu@40020000 {
+   compatible = "nordic,nrf-mwu";
+   reg = <0x40020000 0x1000>;
+   status = "okay";
+  };
+
+  pwm1: pwm@40021000 {
+   compatible = "nordic,nrf-pwm";
+   reg = <0x40021000 0x1000>;
+   interrupts = <33 1>;
+   status = "disabled";
+   #pwm-cells = <3>;
+  };
+
+  pwm2: pwm@40022000 {
+   compatible = "nordic,nrf-pwm";
+   reg = <0x40022000 0x1000>;
+   interrupts = <34 1>;
+   status = "disabled";
+   #pwm-cells = <3>;
+  };
+
+  spi2: spi@40023000 {
+
+
+
+
+
+
+
+   compatible = "nordic,nrf-spim";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40023000 0x1000>;
+   interrupts = <35 1>;
+   max-frequency = <((8) * 1000 * 1000)>;
+   easydma-maxcnt-bits = <16>;
+   status = "disabled";
+  };
+
+  rtc2: rtc@40024000 {
+   compatible = "nordic,nrf-rtc";
+   reg = <0x40024000 0x1000>;
+   cc-num = <4>;
+   interrupts = <36 1>;
+   status = "disabled";
+   clock-frequency = <32768>;
+   prescaler = <1>;
+  };
+
+  i2s0: i2s@40025000 {
+   compatible = "nordic,nrf-i2s";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40025000 0x1000>;
+   interrupts = <37 1>;
+   status = "disabled";
+  };
+
+  usbd: usbd@40027000 {
+   compatible = "nordic,nrf-usbd";
+   reg = <0x40027000 0x1000>;
+   interrupts = <39 1>;
+   num-bidir-endpoints = <1>;
+   num-in-endpoints = <7>;
+   num-out-endpoints = <7>;
+   num-isoin-endpoints = <1>;
+   num-isoout-endpoints = <1>;
+   status = "disabled";
+  };
+
+  uart1: uart@40028000 {
+   compatible = "nordic,nrf-uarte";
+   reg = <0x40028000 0x1000>;
+   interrupts = <40 1>;
+   status = "disabled";
+  };
+
+  qspi: qspi@40029000 {
+   compatible = "nordic,nrf-qspi";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x40029000 0x1000>, <0x12000000 0x8000000>;
+   reg-names = "qspi", "qspi_mm";
+   interrupts = <41 1>;
+   status = "disabled";
+  };
+
+  pwm3: pwm@4002d000 {
+   compatible = "nordic,nrf-pwm";
+   reg = <0x4002d000 0x1000>;
+   interrupts = <45 1>;
+   status = "disabled";
+   #pwm-cells = <3>;
+  };
+
+  spi3: spi@4002f000 {
+   compatible = "nordic,nrf-spim";
+   #address-cells = <1>;
+   #size-cells = <0>;
+   reg = <0x4002f000 0x1000>;
+   interrupts = <47 1>;
+   max-frequency = <((32) * 1000 * 1000)>;
+   easydma-maxcnt-bits = <16>;
+   rx-delay-supported;
+   rx-delay = <2>;
+   status = "disabled";
+  };
+
+  gpio0: gpio@50000000 {
+   compatible = "nordic,nrf-gpio";
+   gpio-controller;
+   reg = <0x50000000 0x200
+          0x50000500 0x300>;
+   #gpio-cells = <2>;
+   status = "disabled";
+   port = <0>;
+  };
+
+  gpio1: gpio@50000300 {
+   compatible = "nordic,nrf-gpio";
+   gpio-controller;
+   reg = <0x50000300 0x200
+          0x50000800 0x300>;
+   #gpio-cells = <2>;
+   ngpios = <16>;
+   status = "disabled";
+   port = <1>;
+  };
+
+  cryptocell: crypto@5002a000 {
+   compatible = "nordic,cryptocell", "arm,cryptocell-310";
+   reg = <0x5002a000 0x1000>, <0x5002b000 0x1000>;
+   reg-names = "wrapper", "core";
+   interrupts = <42 1>;
+   status = "disabled";
+  };
+ };
+};
+
+&nvic {
+ arm,num-irq-priority-bits = <3>;
+};
+# 9 "C:/Users/Hugh/zmk/zephyr/dts/arm/nordic/nrf52840_qiaa.dtsi" 2 3 4
+
+&flash0 {
+ reg = <0x00000000 ((1024) * 1024)>;
+};
+
+&sram0 {
+ reg = <0x20000000 ((256) * 1024)>;
+};
+
+/ {
+ soc {
+  compatible = "nordic,nrf52840-qiaa", "nordic,nrf52840",
+        "nordic,nrf52", "simple-bus";
+ };
+};
+# 9 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy_right.dts" 2
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/matrix_transform.h" 1 3 4
+# 10 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy_right.dts" 2
+# 1 "C:/Users/Hugh/zmk/zephyr/include/zephyr/dt-bindings/led/led.h" 1 3 4
+# 11 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy_right.dts" 2
+
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <((((((1) * 32U) + (5)) & 0x7FU) << 0U) | ((4U & 0xFFFFU) << 16U))>
+                  , <((((((1) * 32U) + (4)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>
+                  , <((((((0) * 32U) + (11)) & 0x7FU) << 0U) | ((6U & 0xFFFFU) << 16U))>
+           ;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <((((((1) * 32U) + (5)) & 0x7FU) << 0U) | ((4U & 0xFFFFU) << 16U))>
+                  , <((((((1) * 32U) + (4)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>
+                  , <((((((0) * 32U) + (11)) & 0x7FU) << 0U) | ((6U & 0xFFFFU) << 16U))>
+           ;
+            low-power-enable;
+        };
+    };
+
+    spi3_default: spi3_default {
+        group1 {
+            psels = <((((((0) * 32U) + (28)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>;
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <((((((0) * 32U) + (28)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>;
+            low-power-enable;
+        };
+    };
+};
+
+
+/ {
+    model = "pygmy";
+    compatible = "pygmy";
+    chosen {
+        zephyr,code-partition = &code_partition;
+  zephyr,sram = &sram0;
+  zephyr,flash = &flash0;
+  zephyr,display = &ls0xx;
+  zmk,kscan = &kscan;
+  zmk,matrix_transform = &transform;
+  zmk,battery = &vbatt;
+  zephyr,console = &cdc_acm_uart;
+        zmk,underglow = &led_strip;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        blue_led: led_0 {
+   gpios = <&gpio0 22 (0 << 0)>;
+   label = "Blue LED";
+        };
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 7>;
+        output-ohms = <2000000>;
+  full-ohms = <(2000000 + 806000)>;
+    };
+
+    ext-power {
+        compatible = "zmk,ext-power-generic";
+  label = "EXT_POWER";
+  control-gpios = <&gpio0 5 (0 << 0)>;
+  init-delay-ms = <50>;
+    };
+
+
+ transform: transform {
+  compatible = "zmk,matrix-transform";
+  columns = <10>;
+  rows = <4>;
+
+  map = <
+        (((0) << 8) + (0)) (((0) << 8) + (1)) (((0) << 8) + (2)) (((0) << 8) + (3)) (((0) << 8) + (4)) (((0) << 8) + (21)) (((0) << 8) + (20)) (((0) << 8) + (19)) (((0) << 8) + (18)) (((0) << 8) + (17))
+        (((0) << 8) + (5)) (((0) << 8) + (6)) (((0) << 8) + (7)) (((0) << 8) + (8)) (((0) << 8) + (9)) (((0) << 8) + (26)) (((0) << 8) + (25)) (((0) << 8) + (24)) (((0) << 8) + (23)) (((0) << 8) + (22))
+        (((0) << 8) + (10)) (((0) << 8) + (11)) (((0) << 8) + (12)) (((0) << 8) + (13)) (((0) << 8) + (14)) (((0) << 8) + (31)) (((0) << 8) + (30)) (((0) << 8) + (29)) (((0) << 8) + (28)) (((0) << 8) + (27))
+                          (((0) << 8) + (15)) (((0) << 8) + (16)) (((0) << 8) + (33)) (((0) << 8) + (32))
+ >;
+ };
+    kscan: kscan {
+  compatible = "zmk,kscan-gpio-direct";
+  label = "KSCAN";
+
+        input-gpios
+            = <&gpio0 12 ((1 << 0) | (1 << 4))>
+            , <&gpio0 16 ((1 << 0) | (1 << 4))>
+            , <&gpio0 13 ((1 << 0) | (1 << 4))>
+            , <&gpio0 14 ((1 << 0) | (1 << 4))>
+            , <&gpio1 0 ((1 << 0) | (1 << 4))>
+
+            , <&gpio1 9 ((1 << 0) | (1 << 4))>
+            , <&gpio0 23 ((1 << 0) | (1 << 4))>
+            , <&gpio0 21 ((1 << 0) | (1 << 4))>
+            , <&gpio0 15 ((1 << 0) | (1 << 4))>
+            , <&gpio1 3 ((1 << 0) | (1 << 4))>
+
+            , <&gpio0 26 ((1 << 0) | (1 << 4))>
+            , <&gpio0 7 ((1 << 0) | (1 << 4))>
+            , <&gpio0 19 ((1 << 0) | (1 << 4))>
+            , <&gpio0 17 ((1 << 0) | (1 << 4))>
+            , <&gpio1 1 ((1 << 0) | (1 << 4))>
+
+            , <&gpio0 9 ((1 << 0) | (1 << 4))>
+            , <&gpio0 10 ((1 << 0) | (1 << 4))>
+            ;
+ };
+};
+
+&transform {
+    col-offset = <17>;
+};
+
+&adc {
+ status = "okay";
+};
+
+&gpiote {
+ status = "okay";
+};
+
+&gpio0 {
+ status = "okay";
+};
+
+&gpio1 {
+ status = "okay";
+};
+
+&spi0 {
+    compatible = "nordic,nrf-spim";
+ status = "okay";
+
+ pinctrl-0 = <&spi0_default>;
+ pinctrl-1 = <&spi0_default>;
+ pinctrl-names = "default", "sleep";
+
+ cs-gpios = <&gpio0 30 (0 << 0)>;
+
+    ls0xx: ls0xx@0 {
+  compatible = "sharp,ls0xx";
+  spi-max-frequency = <2000000>;
+  reg = <0>;
+  width = <144>;
+  height = <168>;
+
+ };
+};
+
+&spi3 {
+  compatible = "nordic,nrf-spim";
+  status = "okay";
+
+  pinctrl-0 = <&spi3_default>;
+  pinctrl-1 = <&spi3_sleep>;
+  pinctrl-names = "default", "sleep";
+
+  led_strip: ws2812@0 {
+    compatible = "worldsemi,ws2812-spi";
+
+
+    reg = <0>;
+    spi-max-frequency = <4000000>;
+
+
+    chain-length = <17>;
+    spi-one-frame = <0x70>;
+    spi-zero-frame = <0x40>;
+    color-mapping = <0
+                          100
+                          0>;
+  };
+};
+
+&usbd {
+  status = "okay";
+  compatible = "nordic,nrf-usbd";
+  cdc_acm_uart: cdc_acm_uart {
+    compatible = "zephyr,cdc-acm-uart";
+    label = "CDC_ACM_0";
+  };
+};
+
+&flash0 {
+
+
+
+
+ partitions {
+  compatible = "fixed-partitions";
+  #address-cells = <1>;
+  #size-cells = <1>;
+
+  sd_partition: partition@0 {
+   reg = <0x00000000 0x00001000>;
+  };
+  code_partition: partition@1000 {
+   reg = <0x00001000 0x000d3000>;
+  };
+
+  storage_partition: partition@d4000 {
+   reg = <0x000d4000 0x00020000>;
+  };
+
+  boot_partition: partition@f4000 {
+   reg = <0x000f4000 0x0000c000>;
+  };
+ };
+};
+# 0 "<command-line>" 2
+# 1 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy_right.keymap" 1
+# 1 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap" 1
+
+
+
+
+
+
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 1 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/key_press.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+
+        /omit-if-no-ref/ cp: kp: key_press {
+            compatible = "zmk,behavior-key-press";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 2 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/key_toggle.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ kt: key_toggle {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 3 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/transparent.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ trans: transparent {
+            compatible = "zmk,behavior-transparent";
+            #binding-cells = <0>;
+        };
+    };
+};
+# 4 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/none.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ none: none {
+            compatible = "zmk,behavior-none";
+            #binding-cells = <0>;
+        };
+    };
+};
+# 5 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/mod_tap.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ mt: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
+# 6 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/layer_tap.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
+};
+# 7 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/gresc.dtsi" 1 3 4
+
+
+
+
+
+
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/keys.h" 1 3 4
+
+
+
+
+
+       
+
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/hid_usage.h" 1 3 4
+# 11 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/hid_usage.h" 3 4
+       
+# 9 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/keys.h" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/hid_usage_pages.h" 1 3 4
+# 11 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/hid_usage_pages.h" 3 4
+       
+# 10 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/keys.h" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/modifiers.h" 1 3 4
+
+
+
+
+
+       
+# 11 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/keys.h" 2 3 4
+# 8 "C:/Users/Hugh/zmk/app/dts/behaviors/gresc.dtsi" 2 3 4
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp (((((0x07) << 16) | (0x29))))>, <&kp ((((0x07) << 16) | (0x35)))>;
+            mods = <(0x08|0x02|0x80|0x20)>;
+        };
+    };
+};
+# 8 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/sticky_key.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ sk: sticky_key {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            bindings = <&kp>;
+            ignore-modifiers;
+        };
+        /omit-if-no-ref/ sl: sticky_layer {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            bindings = <&mo>;
+            quick-release;
+        };
+    };
+
+};
+# 9 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/momentary_layer.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ mo: momentary_layer {
+            compatible = "zmk,behavior-momentary-layer";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 10 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/toggle_layer.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ tog: toggle_layer {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 11 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/to_layer.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ to: to_layer {
+            compatible = "zmk,behavior-to-layer";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 12 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/reset.dtsi" 1 3 4
+
+
+
+
+
+
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/reset.h" 1 3 4
+# 8 "C:/Users/Hugh/zmk/app/dts/behaviors/reset.dtsi" 2 3 4
+
+/ {
+    behaviors {
+
+        sys_reset: sysreset {
+            compatible = "zmk,behavior-reset";
+            #binding-cells = <0>;
+        };
+
+
+        bootloader: bootload {
+            compatible = "zmk,behavior-reset";
+            type = <0x57>;
+            #binding-cells = <0>;
+        };
+    };
+};
+# 13 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/sensor_rotate_key_press.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+
+        /omit-if-no-ref/ inc_dec_cp: inc_dec_kp: enc_key_press {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
+# 14 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/rgb_underglow.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+
+        rgb_ug: rgb_ug {
+            compatible = "zmk,behavior-rgb-underglow";
+            #binding-cells = <2>;
+        };
+    };
+};
+# 15 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/bluetooth.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ bt: bluetooth {
+            compatible = "zmk,behavior-bluetooth";
+            #binding-cells = <2>;
+        };
+    };
+};
+# 16 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/ext_power.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+
+        ext_power: extpower {
+            compatible = "zmk,behavior-ext-power";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 17 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/outputs.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ out: outputs {
+            compatible = "zmk,behavior-outputs";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 18 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/caps_word.dtsi" 1 3 4
+# 9 "C:/Users/Hugh/zmk/app/dts/behaviors/caps_word.dtsi" 3 4
+/ {
+    behaviors {
+        /omit-if-no-ref/ caps_word: caps_word {
+            compatible = "zmk,behavior-caps-word";
+            #binding-cells = <0>;
+            continue-list = <((0x02 << 24 | (((0x07) << 16) | (0x2D)))) ((((0x07) << 16) | (0x2A))) ((((0x07) << 16) | (0x4C)))>;
+        };
+    };
+};
+# 19 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/key_repeat.dtsi" 1 3 4
+# 9 "C:/Users/Hugh/zmk/app/dts/behaviors/key_repeat.dtsi" 3 4
+/ {
+    behaviors {
+        /omit-if-no-ref/ key_repeat: key_repeat {
+            compatible = "zmk,behavior-key-repeat";
+            #binding-cells = <0>;
+            usage-pages = <(0x07)>;
+        };
+    };
+};
+# 20 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/backlight.dtsi" 1 3 4
+
+
+
+
+
+
+ / {
+    behaviors {
+
+        /omit-if-no-ref/ bl: bcklight {
+            compatible = "zmk,behavior-backlight";
+            #binding-cells = <2>;
+        };
+    };
+};
+# 21 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/macros.dtsi" 1 3 4
+# 29 "C:/Users/Hugh/zmk/app/dts/behaviors/macros.dtsi" 3 4
+/ {
+    behaviors {
+        macro_tap: macro_tap {
+            compatible = "zmk,macro-control-mode-tap";
+            #binding-cells = <0>;
+        };
+
+        macro_press: macro_press {
+            compatible = "zmk,macro-control-mode-press";
+            #binding-cells = <0>;
+        };
+
+        macro_release: macro_release {
+            compatible = "zmk,macro-control-mode-release";
+            #binding-cells = <0>;
+        };
+
+        macro_tap_time: macro_tap_time {
+            compatible = "zmk,macro-control-tap-time";
+            #binding-cells = <1>;
+        };
+
+        macro_wait_time: macro_wait_time {
+            compatible = "zmk,macro-control-wait-time";
+            #binding-cells = <1>;
+        };
+
+        macro_pause_for_release: macro_pause_for_release {
+            compatible = "zmk,macro-pause-for-release";
+            #binding-cells = <0>;
+        };
+
+        macro_param_1to1: macro_param_1to1 {
+            compatible = "zmk,macro-param-1to1";
+            #binding-cells = <0>;
+        };
+
+        macro_param_1to2: macro_param_1to2 {
+            compatible = "zmk,macro-param-1to2";
+            #binding-cells = <0>;
+        };
+
+        macro_param_2to1: macro_param_2to1 {
+            compatible = "zmk,macro-param-2to1";
+            #binding-cells = <0>;
+        };
+
+        macro_param_2to2: macro_param_2to2 {
+            compatible = "zmk,macro-param-2to2";
+            #binding-cells = <0>;
+        };
+    };
+};
+# 22 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/mouse_key_press.dtsi" 1 3 4
+/ {
+    behaviors {
+        /omit-if-no-ref/ mkp: mouse_key_press {
+            compatible = "zmk,behavior-mouse-key-press";
+            #binding-cells = <1>;
+        };
+    };
+};
+# 23 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 1 "C:/Users/Hugh/zmk/app/dts/behaviors/soft_off.dtsi" 1 3 4
+
+
+
+
+
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ soft_off: z_so_off {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            split-peripheral-off-on-press;
+        };
+    };
+};
+# 24 "C:/Users/Hugh/zmk/app/dts/behaviors.dtsi" 2 3 4
+# 8 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap" 2
+
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/bt.h" 1 3 4
+# 10 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap" 2
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/ext_power.h" 1 3 4
+# 11 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap" 2
+# 29 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+&mt {
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+};
+
+&caps_word {
+    continue-list = <((0x02 << 24 | (((0x07) << 16) | (0x2D)))) ((((0x07) << 16) | (0x2D))) (((((0x07) << 16) | (0x2A)))) (((((0x07) << 16) | (0x4C)))) (((((0x07) << 16) | (0x1E)))) (((((0x07) << 16) | (0x1F)))) (((((0x07) << 16) | (0x20)))) (((((0x07) << 16) | (0x21)))) (((((0x07) << 16) | (0x22)))) (((((0x07) << 16) | (0x23)))) (((((0x07) << 16) | (0x24)))) (((((0x07) << 16) | (0x25)))) (((((0x07) << 16) | (0x26)))) (((((0x07) << 16) | (0x27))))>;
+};
+
+&led_strip {
+    chain-length = <17>;
+};
+
+
+/ {
+    behaviors {
+# 58 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+        bs_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp (((((0x07) << 16) | (0x2A))))>, <&kp (((((0x07) << 16) | (0x4C))))>;
+            mods = <(0x02|0x20)>;
+            keep-mods = <0x20>;
+        };
+    };
+
+
+    macros {
+        inv_qm: inv_qm { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <10>; tap-ms = <10>; bindings = <&macro_press &kp (((((0x07) << 16) | (0xE2))))> , <&macro_tap &kp (((((0x07) << 16) | (0x59)))) &kp (((((0x07) << 16) | (0x5E)))) &kp (((((0x07) << 16) | (0x60))))> , <&macro_release &kp (((((0x07) << 16) | (0xE2))))>; };
+# 86 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+    };
+# 97 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "DEF";
+
+            bindings = <
+&kp ((((0x07) << 16) | (0x14))) &kp ((((0x07) << 16) | (0x1A))) &kp ((((0x07) << 16) | (0x08))) &kp ((((0x07) << 16) | (0x15))) &kp ((((0x07) << 16) | (0x17))) &kp ((((0x07) << 16) | (0x1C))) &kp ((((0x07) << 16) | (0x18))) &kp ((((0x07) << 16) | (0x0C))) &kp ((((0x07) << 16) | (0x12))) &kp ((((0x07) << 16) | (0x13)))
+&mt (((((0x07) << 16) | (0xE3)))) ((((0x07) << 16) | (0x04))) &mt (((((0x07) << 16) | (0xE2)))) ((((0x07) << 16) | (0x16))) &mt (((((0x07) << 16) | (0xE0)))) ((((0x07) << 16) | (0x07))) &mt (((((0x07) << 16) | (0xE1)))) ((((0x07) << 16) | (0x09))) &kp ((((0x07) << 16) | (0x0A))) &kp ((((0x07) << 16) | (0x0B))) &mt (((((0x07) << 16) | (0xE5)))) ((((0x07) << 16) | (0x0D))) &mt (((((0x07) << 16) | (0xE0)))) ((((0x07) << 16) | (0x0E))) &mt (((((0x07) << 16) | (0xE2)))) ((((0x07) << 16) | (0x0F))) &mt (((((0x07) << 16) | (0xE3)))) (((((0x07) << 16) | (0x33))))
+&kp ((((0x07) << 16) | (0x1D))) &kp ((((0x07) << 16) | (0x1B))) &kp ((((0x07) << 16) | (0x06))) &kp ((((0x07) << 16) | (0x19))) &kp ((((0x07) << 16) | (0x05))) &kp ((((0x07) << 16) | (0x11))) &kp ((((0x07) << 16) | (0x10))) &kp ((((0x07) << 16) | (0x36))) &kp (((((0x07) << 16) | (0x37)))) &kp (((((0x07) << 16) | (0x38))))
+                                    &mt (((((0x07) << 16) | (0xE0)))) (((((0x07) << 16) | (0x29)))) &lt 3 (((((0x07) << 16) | (0x2C)))) &lt 2 (((((0x07) << 16) | (0x28)))) &bs_del
+
+            >;
+
+        };
+
+        cole_layer {
+   bindings = <
+&kp ((((0x07) << 16) | (0x14))) &kp ((((0x07) << 16) | (0x1A))) &kp ((((0x07) << 16) | (0x09))) &kp ((((0x07) << 16) | (0x13))) &kp ((((0x07) << 16) | (0x05))) &kp ((((0x07) << 16) | (0x0D))) &kp ((((0x07) << 16) | (0x0F))) &kp ((((0x07) << 16) | (0x18))) &kp ((((0x07) << 16) | (0x1C))) &kp (((((0x07) << 16) | (0x33))))
+&mt (((((0x07) << 16) | (0xE3)))) ((((0x07) << 16) | (0x04))) &mt (((((0x07) << 16) | (0xE2)))) ((((0x07) << 16) | (0x15))) &mt (((((0x07) << 16) | (0xE0)))) ((((0x07) << 16) | (0x16))) &mt (((((0x07) << 16) | (0xE1)))) ((((0x07) << 16) | (0x17))) &kp ((((0x07) << 16) | (0x0A))) &kp ((((0x07) << 16) | (0x10))) &mt (((((0x07) << 16) | (0xE5)))) ((((0x07) << 16) | (0x11))) &mt (((((0x07) << 16) | (0xE0)))) ((((0x07) << 16) | (0x08))) &mt (((((0x07) << 16) | (0xE2)))) ((((0x07) << 16) | (0x0C))) &mt (((((0x07) << 16) | (0xE3)))) ((((0x07) << 16) | (0x12)))
+&kp ((((0x07) << 16) | (0x1D))) &kp ((((0x07) << 16) | (0x1B))) &kp ((((0x07) << 16) | (0x06))) &kp ((((0x07) << 16) | (0x07))) &kp ((((0x07) << 16) | (0x19))) &kp ((((0x07) << 16) | (0x0E))) &kp ((((0x07) << 16) | (0x0B))) &kp ((((0x07) << 16) | (0x36))) &kp (((((0x07) << 16) | (0x37)))) &kp (((((0x07) << 16) | (0x38))))
+                                    &mt (((((0x07) << 16) | (0xE0)))) (((((0x07) << 16) | (0x29)))) &lt 3 (((((0x07) << 16) | (0x2C)))) &lt 2 (((((0x07) << 16) | (0x28)))) &bs_del
+   >;
+        };
+
+        symbol_layer {
+            display-name = "SYM";
+            bindings = <
+&kp (((0x02 << 24 | (((0x07) << 16) | (0x1E))))) &kp (((0x02 << 24 | (((0x07) << 16) | (0x1F))))) &kp ((0x02 << 24 | (((0x07) << 16) | (0x20)))) &kp (((0x02 << 24 | (((0x07) << 16) | (0x21))))) &kp (((0x02 << 24 | (((0x07) << 16) | (0x22))))) &kp ((((0x07) << 16) | (0x38))) &kp (((((0x07) << 16) | (0x24)))) &kp (((((0x07) << 16) | (0x25)))) &kp (((((0x07) << 16) | (0x26)))) &kp ((((0x07) << 16) | (0x36)))
+&kp ((0x02 << 24 | (((0x07) << 16) | (0x2E)))) &kp ((((0x07) << 16) | (0x2E))) &kp (((0x02 << 24 | (((0x07) << 16) | (0x2D))))) &kp ((((0x07) << 16) | (0x2D))) &kp ((0x02 << 24 | (((0x07) << 16) | (0x23)))) &kp (((((0x07) << 16) | (0x27)))) &kp (((((0x07) << 16) | (0x21)))) &kp (((((0x07) << 16) | (0x22)))) &kp (((((0x07) << 16) | (0x23)))) &kp (((((0x07) << 16) | (0x37))))
+&mo 4 &inv_qm &kp (((0x02 << 24 | (((0x07) << 16) | (0x25))))) &kp (((0x02 << 24 | (((0x07) << 16) | (0x24))))) &none &kp (((((0x07) << 16) | (0x33)))) &kp (((((0x07) << 16) | (0x1E)))) &kp (((((0x07) << 16) | (0x1F)))) &kp (((((0x07) << 16) | (0x20)))) &kp ((((0x07) << 16) | (0x38)))
+                                        &kp (((((0x07) << 16) | (0x2A)))) &trans &trans &bs_del
+            >;
+        };
+
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+&kp (0x04 << 24 | ((((0x07) << 16) | (0x3D)))) &kp (0x01 << 24 | (0x02 << 24 | ((((0x07) << 16) | (0x2B))))) &kp (0x01 << 24 | ((((0x07) << 16) | (0x2B)))) &kp (0x01 << 24 | ((((0x07) << 16) | (0x3D)))) &kp (((((0x0C) << 16) | (0xE9)))) &kp (((((0x07) << 16) | (0x49)))) &kp (((((0x07) << 16) | (0x4E)))) &kp (((((0x07) << 16) | (0x52)))) &kp (((((0x07) << 16) | (0x4B)))) &kp (((((0x0C) << 16) | (0x192))))
+&kp (((((0x07) << 16) | (0xE0)))) &kp (((((0x07) << 16) | (0xE3)))) &kp (((((0x07) << 16) | (0xE2)))) &mt (((((0x07) << 16) | (0xE1)))) ((((0x07) << 16) | (0x2B))) &kp (((((0x0C) << 16) | (0xEA)))) &kp ((((0x07) << 16) | (0x4A))) &kp (((((0x07) << 16) | (0x50)))) &kp (((((0x07) << 16) | (0x51)))) &kp (((((0x07) << 16) | (0x4F)))) &kp ((((0x07) << 16) | (0x4D)))
+&none &none &none &kp (0x02 << 24 | (((((0x07) << 16) | (0x49))))) &kp (((((0x0C) << 16) | (0xCD)))) &none &kp (((((0x07) << 16) | (0x4C)))) &kp (((((0x0C) << 16) | (0xB6)))) &kp ((((0x0C) << 16) | (0xB5))) &none
+                                        &none &trans &trans &kp ((((0x07) << 16) | (0x2C)))
+            >;
+
+        };
+
+        fun_layer {
+            display-name = "FUN";
+            bindings = <
+&kp (0x04 << 24 | ((((0x07) << 16) | (0x3D)))) &kp (0x01 << 24 | (0x02 << 24 | ((((0x07) << 16) | (0x2B))))) &kp (0x01 << 24 | ((((0x07) << 16) | (0x2B)))) &kp (0x01 << 24 | ((((0x07) << 16) | (0x3D)))) &kp (((((0x0C) << 16) | (0xE9)))) &kp (((((0x07) << 16) | (0x49)))) &kp (((((0x07) << 16) | (0x4E)))) &kp (((((0x07) << 16) | (0x52)))) &kp (((((0x07) << 16) | (0x4B)))) &kp (((((0x0C) << 16) | (0x192))))
+&kp (((((0x07) << 16) | (0xE0)))) &kp (((((0x07) << 16) | (0xE3)))) &kp (((((0x07) << 16) | (0xE2)))) &mt (((((0x07) << 16) | (0xE1)))) ((((0x07) << 16) | (0x2B))) &kp (((((0x0C) << 16) | (0xEA)))) &kp ((((0x07) << 16) | (0x4A))) &kp (((((0x07) << 16) | (0x50)))) &kp (((((0x07) << 16) | (0x51)))) &kp (((((0x07) << 16) | (0x4F)))) &kp ((((0x07) << 16) | (0x4D)))
+&rgb_ug &mo 0 &none &kp (0x02 << 24 | (((((0x07) << 16) | (0x49))))) &kp (((((0x0C) << 16) | (0xCD)))) &none &kp (((((0x07) << 16) | (0x4C)))) &kp (((((0x0C) << 16) | (0xB6)))) &kp ((((0x0C) << 16) | (0xB5))) &none
+                                        &none &trans &trans &kp ((((0x07) << 16) | (0x2C)))
+            >;
+
+        };
+
+        sys_layer {
+            display-name = "SYS";
+            bindings = <
+&kp (0x04 << 24 | ((((0x07) << 16) | (0x3D)))) &kp (0x01 << 24 | (0x02 << 24 | ((((0x07) << 16) | (0x2B))))) &kp (0x01 << 24 | ((((0x07) << 16) | (0x2B)))) &kp (0x01 << 24 | ((((0x07) << 16) | (0x3D)))) &kp (((((0x0C) << 16) | (0xE9)))) &kp (((((0x07) << 16) | (0x49)))) &kp (((((0x07) << 16) | (0x4E)))) &kp (((((0x07) << 16) | (0x52)))) &kp (((((0x07) << 16) | (0x4B)))) &kp (((((0x0C) << 16) | (0x192))))
+&kp (((((0x07) << 16) | (0xE0)))) &kp (((((0x07) << 16) | (0xE3)))) &kp (((((0x07) << 16) | (0xE2)))) &mt (((((0x07) << 16) | (0xE1)))) ((((0x07) << 16) | (0x2B))) &kp (((((0x0C) << 16) | (0xEA)))) &kp ((((0x07) << 16) | (0x4A))) &kp (((((0x07) << 16) | (0x50)))) &kp (((((0x07) << 16) | (0x51)))) &kp (((((0x07) << 16) | (0x4F)))) &kp ((((0x07) << 16) | (0x4D)))
+&none &none &none &kp (0x02 << 24 | (((((0x07) << 16) | (0x49))))) &kp (((((0x0C) << 16) | (0xCD)))) &none &kp (((((0x07) << 16) | (0x4C)))) &kp (((((0x0C) << 16) | (0xB6)))) &kp ((((0x0C) << 16) | (0xB5))) &none
+                                        &none &trans &trans &kp ((((0x07) << 16) | (0x2C)))
+            >;
+
+        };
+    };
+};
+# 2 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy_right.keymap" 2
+# 0 "<command-line>" 2
+# 1 "C:/Users/Hugh/zmk/zephyr/misc/empty_file.c"

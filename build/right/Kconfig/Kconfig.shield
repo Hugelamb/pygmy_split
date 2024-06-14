@@ -1,0 +1,2 @@
+osource "C:/Users/Hugh/zmk/app/boards/shields/*/Kconfig.shield"
+osource "C:\Users\Hugh\pygmy_split\config/boards/shields/*/Kconfig.shield"
