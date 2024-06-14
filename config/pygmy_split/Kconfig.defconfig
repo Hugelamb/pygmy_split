@@ -1,5 +1,5 @@
-if BOARD_PYGMY_LEFT
-
+if BOARD_PYGMY_RIGHT
+# define right side as central
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
 
