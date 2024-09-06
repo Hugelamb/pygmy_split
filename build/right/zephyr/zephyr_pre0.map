@@ -9326,10 +9326,10 @@ initlevel       0x0000000000031490      0x188
                 0x0000000000031510        0x8 app/libapp.a(behavior_hold_tap.c.obj)
  .z_init_POST_KERNEL40_00034_
                 0x0000000000031518        0x8 app/libapp.a(behavior_hold_tap.c.obj)
- .z_init_POST_KERNEL40_00037_
-                0x0000000000031520        0x8 app/libapp.a(behavior_none.c.obj)
+ .z_init_POST_KERNEL40_00036_
+                0x0000000000031520        0x8 app/libapp.a(behavior_rgb_underglow.c.obj)
  .z_init_POST_KERNEL40_00038_
-                0x0000000000031528        0x8 app/libapp.a(behavior_rgb_underglow.c.obj)
+                0x0000000000031528        0x8 app/libapp.a(behavior_none.c.obj)
  .z_init_POST_KERNEL40_00039_
                 0x0000000000031530        0x8 app/libapp.a(behavior_transparent.c.obj)
  .z_init_POST_KERNEL40_00046_
@@ -9441,10 +9441,10 @@ device_area     0x0000000000031618      0x288
                 0x0000000000031768                __device_dts_ord_39
  ._device.static.3_40_
                 0x0000000000031780       0x18 app/libapp.a(behavior_none.c.obj)
-                0x0000000000031780                __device_dts_ord_37
+                0x0000000000031780                __device_dts_ord_38
  ._device.static.3_40_
                 0x0000000000031798       0x18 app/libapp.a(behavior_rgb_underglow.c.obj)
-                0x0000000000031798                __device_dts_ord_38
+                0x0000000000031798                __device_dts_ord_36
  ._device.static.3_40_
                 0x00000000000317b0       0x18 zephyr/subsys/usb/device/class/hid/libsubsys__usb__device__class__hid.a(core.c.obj)
  ._device.static.3_50_
@@ -11884,10 +11884,10 @@ zmk_behavior_ref_area
                 0x0000000000036844        0x4 app/libapp.a(behavior_hold_tap.c.obj)
  ._zmk_behavior_ref.static.zmk_behavior___device_dts_ord_34_
                 0x0000000000036848        0x4 app/libapp.a(behavior_hold_tap.c.obj)
- ._zmk_behavior_ref.static.zmk_behavior___device_dts_ord_37_
-                0x000000000003684c        0x4 app/libapp.a(behavior_none.c.obj)
+ ._zmk_behavior_ref.static.zmk_behavior___device_dts_ord_36_
+                0x000000000003684c        0x4 app/libapp.a(behavior_rgb_underglow.c.obj)
  ._zmk_behavior_ref.static.zmk_behavior___device_dts_ord_38_
-                0x0000000000036850        0x4 app/libapp.a(behavior_rgb_underglow.c.obj)
+                0x0000000000036850        0x4 app/libapp.a(behavior_none.c.obj)
  ._zmk_behavior_ref.static.zmk_behavior___device_dts_ord_39_
                 0x0000000000036854        0x4 app/libapp.a(behavior_transparent.c.obj)
  ._zmk_behavior_ref.static.zmk_behavior___device_dts_ord_46_

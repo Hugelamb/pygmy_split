@@ -57,4 +57,5 @@ empty_file.o: C:/Users/Hugh/zmk/zephyr/misc/empty_file.c \
  C:/Users/Hugh/zmk/app/dts/behaviors/mouse_key_press.dtsi \
  C:/Users/Hugh/zmk/app/dts/behaviors/soft_off.dtsi \
  C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/bt.h \
- C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/ext_power.h
+ C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/ext_power.h \
+ C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/rgb.h

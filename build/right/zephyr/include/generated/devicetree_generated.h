@@ -44,9 +44,9 @@
  *   33  /behaviors/layer_tap
  *   34  /behaviors/mod_tap
  *   35  /keymap/cole_layer
- *   36  /keymap/default_layer
- *   37  /behaviors/none
- *   38  /behaviors/rgb_ug
+ *   36  /behaviors/rgb_ug
+ *   37  /keymap/default_layer
+ *   38  /behaviors/none
  *   39  /behaviors/transparent
  *   40  /keymap/fun_layer
  *   41  /keymap/nav_layer
@@ -2146,8 +2146,8 @@
 	32, /* /behaviors/momentary_layer */ \
 	33, /* /behaviors/layer_tap */ \
 	34, /* /behaviors/mod_tap */ \
-	37, /* /behaviors/none */ \
-	38, /* /behaviors/rgb_ug */ \
+	36, /* /behaviors/rgb_ug */ \
+	38, /* /behaviors/none */ \
 	39, /* /behaviors/transparent */ \
 	43, /* /behaviors/macro_press */ \
 	44, /* /behaviors/macro_release */ \
@@ -3125,7 +3125,7 @@
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_keymap_SUPPORTS_ORDS \
 	35, /* /keymap/cole_layer */ \
-	36, /* /keymap/default_layer */ \
+	37, /* /keymap/default_layer */ \
 	40, /* /keymap/fun_layer */ \
 	41, /* /keymap/nav_layer */ \
 	47, /* /keymap/symbol_layer */ \
@@ -3212,7 +3212,7 @@
 	33, /* /behaviors/layer_tap */ \
 	34, /* /behaviors/mod_tap */ \
 	35, /* /keymap/cole_layer */ \
-	36, /* /keymap/default_layer */ \
+	37, /* /keymap/default_layer */ \
 	40, /* /keymap/fun_layer */ \
 	41, /* /keymap/nav_layer */ \
 	46, /* /macros/inv_qm */ \
@@ -3288,7 +3288,7 @@
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_behaviors_S_backspace_delete_SUPPORTS_ORDS \
 	35, /* /keymap/cole_layer */ \
-	36, /* /keymap/default_layer */ \
+	37, /* /keymap/default_layer */ \
 	47, /* /keymap/symbol_layer */
 
 /* Existence and alternate IDs: */
@@ -3451,7 +3451,7 @@
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_behaviors_S_layer_tap_SUPPORTS_ORDS \
 	35, /* /keymap/cole_layer */ \
-	36, /* /keymap/default_layer */
+	37, /* /keymap/default_layer */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_behaviors_S_layer_tap_EXISTS 1
@@ -3576,7 +3576,7 @@
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_behaviors_S_mod_tap_SUPPORTS_ORDS \
 	35, /* /keymap/cole_layer */ \
-	36, /* /keymap/default_layer */ \
+	37, /* /keymap/default_layer */ \
 	40, /* /keymap/fun_layer */ \
 	41, /* /keymap/nav_layer */ \
 	48, /* /keymap/sys_layer */
@@ -4014,6 +4014,75 @@
 #define DT_N_S_keymap_S_cole_layer_P_bindings_EXISTS 1
 
 /*
+ * Devicetree node: /behaviors/rgb_ug
+ *
+ * Node identifier: DT_N_S_behaviors_S_rgb_ug
+ *
+ * Binding (compatible = zmk,behavior-rgb-underglow):
+ *   C:/Users/Hugh/zmk/app/dts/bindings\behaviors\zmk,behavior-rgb-underglow.yaml
+ *
+ * (Descriptions have moved to the Devicetree Bindings Index
+ * in the documentation.)
+ */
+
+/* Node's full path: */
+#define DT_N_S_behaviors_S_rgb_ug_PATH "/behaviors/rgb_ug"
+
+/* Node's name with unit-address: */
+#define DT_N_S_behaviors_S_rgb_ug_FULL_NAME "rgb_ug"
+
+/* Node parent (/behaviors) identifier: */
+#define DT_N_S_behaviors_S_rgb_ug_PARENT DT_N_S_behaviors
+
+/* Node's index in its parent's list of children: */
+#define DT_N_S_behaviors_S_rgb_ug_CHILD_IDX 8
+
+/* Helper macros for child nodes of this node. */
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD(fn) 
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_SEP(fn, sep) 
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_VARGS(fn, ...) 
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY(fn) 
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
+
+/* Node's dependency ordinal: */
+#define DT_N_S_behaviors_S_rgb_ug_ORD 36
+#define DT_N_S_behaviors_S_rgb_ug_ORD_STR_SORTABLE 00036
+
+/* Ordinals for what this node depends on directly: */
+#define DT_N_S_behaviors_S_rgb_ug_REQUIRES_ORDS \
+	15, /* /behaviors */
+
+/* Ordinals for what depends directly on this node: */
+#define DT_N_S_behaviors_S_rgb_ug_SUPPORTS_ORDS \
+	37, /* /keymap/default_layer */ \
+	40, /* /keymap/fun_layer */
+
+/* Existence and alternate IDs: */
+#define DT_N_S_behaviors_S_rgb_ug_EXISTS 1
+#define DT_N_INST_0_zmk_behavior_rgb_underglow DT_N_S_behaviors_S_rgb_ug
+#define DT_N_NODELABEL_rgb_ug                  DT_N_S_behaviors_S_rgb_ug
+
+/* Macros for properties that are special in the specification: */
+#define DT_N_S_behaviors_S_rgb_ug_REG_NUM 0
+#define DT_N_S_behaviors_S_rgb_ug_RANGES_NUM 0
+#define DT_N_S_behaviors_S_rgb_ug_FOREACH_RANGE(fn) 
+#define DT_N_S_behaviors_S_rgb_ug_IRQ_NUM 0
+#define DT_N_S_behaviors_S_rgb_ug_COMPAT_MATCHES_zmk_behavior_rgb_underglow 1
+#define DT_N_S_behaviors_S_rgb_ug_COMPAT_VENDOR_IDX_0_EXISTS 1
+#define DT_N_S_behaviors_S_rgb_ug_COMPAT_VENDOR_IDX_0 "ZMK Project"
+#define DT_N_S_behaviors_S_rgb_ug_COMPAT_MODEL_IDX_0_EXISTS 1
+#define DT_N_S_behaviors_S_rgb_ug_COMPAT_MODEL_IDX_0 "behavior-rgb-underglow"
+#define DT_N_S_behaviors_S_rgb_ug_STATUS_okay 1
+
+/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
+#define DT_N_S_behaviors_S_rgb_ug_PINCTRL_NUM 0
+
+/* (No generic property macros) */
+
+/*
  * Devicetree node: /keymap/default_layer
  *
  * Node identifier: DT_N_S_keymap_S_default_layer
@@ -4045,8 +4114,8 @@
 #define DT_N_S_keymap_S_default_layer_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_keymap_S_default_layer_ORD 36
-#define DT_N_S_keymap_S_default_layer_ORD_STR_SORTABLE 00036
+#define DT_N_S_keymap_S_default_layer_ORD 37
+#define DT_N_S_keymap_S_default_layer_ORD_STR_SORTABLE 00037
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_keymap_S_default_layer_REQUIRES_ORDS \
@@ -4054,7 +4123,8 @@
 	30, /* /behaviors/key_press */ \
 	31, /* /behaviors/backspace_delete */ \
 	33, /* /behaviors/layer_tap */ \
-	34, /* /behaviors/mod_tap */
+	34, /* /behaviors/mod_tap */ \
+	36, /* /behaviors/rgb_ug */
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_keymap_S_default_layer_SUPPORTS_ORDS /* nothing */
@@ -4110,9 +4180,11 @@
 #define DT_N_S_keymap_S_default_layer_P_bindings_IDX_5_VAL_param1 458780
 #define DT_N_S_keymap_S_default_layer_P_bindings_IDX_5_VAL_param1_EXISTS 1
 #define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_EXISTS 1
-#define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_PH DT_N_S_behaviors_S_key_press
-#define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_VAL_param1 458776
+#define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_PH DT_N_S_behaviors_S_rgb_ug
+#define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_VAL_param1 0
 #define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_VAL_param1_EXISTS 1
+#define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_VAL_param2 0
+#define DT_N_S_keymap_S_default_layer_P_bindings_IDX_6_VAL_param2_EXISTS 1
 #define DT_N_S_keymap_S_default_layer_P_bindings_IDX_7_EXISTS 1
 #define DT_N_S_keymap_S_default_layer_P_bindings_IDX_7_PH DT_N_S_behaviors_S_key_press
 #define DT_N_S_keymap_S_default_layer_P_bindings_IDX_7_VAL_param1 458764
@@ -4415,8 +4487,8 @@
 #define DT_N_S_behaviors_S_none_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_behaviors_S_none_ORD 37
-#define DT_N_S_behaviors_S_none_ORD_STR_SORTABLE 00037
+#define DT_N_S_behaviors_S_none_ORD 38
+#define DT_N_S_behaviors_S_none_ORD_STR_SORTABLE 00038
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_behaviors_S_none_REQUIRES_ORDS \
@@ -4448,74 +4520,6 @@
 
 /* Pin control (pinctrl-<i>, pinctrl-names) properties: */
 #define DT_N_S_behaviors_S_none_PINCTRL_NUM 0
-
-/* (No generic property macros) */
-
-/*
- * Devicetree node: /behaviors/rgb_ug
- *
- * Node identifier: DT_N_S_behaviors_S_rgb_ug
- *
- * Binding (compatible = zmk,behavior-rgb-underglow):
- *   C:/Users/Hugh/zmk/app/dts/bindings\behaviors\zmk,behavior-rgb-underglow.yaml
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_behaviors_S_rgb_ug_PATH "/behaviors/rgb_ug"
-
-/* Node's name with unit-address: */
-#define DT_N_S_behaviors_S_rgb_ug_FULL_NAME "rgb_ug"
-
-/* Node parent (/behaviors) identifier: */
-#define DT_N_S_behaviors_S_rgb_ug_PARENT DT_N_S_behaviors
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_behaviors_S_rgb_ug_CHILD_IDX 8
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD(fn) 
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_behaviors_S_rgb_ug_ORD 38
-#define DT_N_S_behaviors_S_rgb_ug_ORD_STR_SORTABLE 00038
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_behaviors_S_rgb_ug_REQUIRES_ORDS \
-	15, /* /behaviors */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_behaviors_S_rgb_ug_SUPPORTS_ORDS \
-	40, /* /keymap/fun_layer */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_behaviors_S_rgb_ug_EXISTS 1
-#define DT_N_INST_0_zmk_behavior_rgb_underglow DT_N_S_behaviors_S_rgb_ug
-#define DT_N_NODELABEL_rgb_ug                  DT_N_S_behaviors_S_rgb_ug
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_behaviors_S_rgb_ug_REG_NUM 0
-#define DT_N_S_behaviors_S_rgb_ug_RANGES_NUM 0
-#define DT_N_S_behaviors_S_rgb_ug_FOREACH_RANGE(fn) 
-#define DT_N_S_behaviors_S_rgb_ug_IRQ_NUM 0
-#define DT_N_S_behaviors_S_rgb_ug_COMPAT_MATCHES_zmk_behavior_rgb_underglow 1
-#define DT_N_S_behaviors_S_rgb_ug_COMPAT_VENDOR_IDX_0_EXISTS 1
-#define DT_N_S_behaviors_S_rgb_ug_COMPAT_VENDOR_IDX_0 "ZMK Project"
-#define DT_N_S_behaviors_S_rgb_ug_COMPAT_MODEL_IDX_0_EXISTS 1
-#define DT_N_S_behaviors_S_rgb_ug_COMPAT_MODEL_IDX_0 "behavior-rgb-underglow"
-#define DT_N_S_behaviors_S_rgb_ug_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_behaviors_S_rgb_ug_PINCTRL_NUM 0
 
 /* (No generic property macros) */
 
@@ -4630,8 +4634,8 @@
 	29, /* /keymap */ \
 	30, /* /behaviors/key_press */ \
 	34, /* /behaviors/mod_tap */ \
-	37, /* /behaviors/none */ \
-	38, /* /behaviors/rgb_ug */ \
+	36, /* /behaviors/rgb_ug */ \
+	38, /* /behaviors/none */ \
 	39, /* /behaviors/transparent */
 
 /* Ordinals for what depends directly on this node: */
@@ -4962,7 +4966,7 @@
 	29, /* /keymap */ \
 	30, /* /behaviors/key_press */ \
 	34, /* /behaviors/mod_tap */ \
-	37, /* /behaviors/none */ \
+	38, /* /behaviors/none */ \
 	39, /* /behaviors/transparent */
 
 /* Ordinals for what depends directly on this node: */
@@ -5691,7 +5695,7 @@
 	30, /* /behaviors/key_press */ \
 	31, /* /behaviors/backspace_delete */ \
 	32, /* /behaviors/momentary_layer */ \
-	37, /* /behaviors/none */ \
+	38, /* /behaviors/none */ \
 	39, /* /behaviors/transparent */ \
 	46, /* /macros/inv_qm */
 
@@ -6029,7 +6033,7 @@
 	29, /* /keymap */ \
 	30, /* /behaviors/key_press */ \
 	34, /* /behaviors/mod_tap */ \
-	37, /* /behaviors/none */ \
+	38, /* /behaviors/none */ \
 	39, /* /behaviors/transparent */
 
 /* Ordinals for what depends directly on this node: */

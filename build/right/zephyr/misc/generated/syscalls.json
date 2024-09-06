@@ -1233,86 +1233,6 @@
     ],
     [
         [
-            "const struct device *behavior_get_binding",
-            "const char *name"
-        ],
-        "behavior.h",
-        true
-    ],
-    [
-        [
-            "int behavior_keymap_binding_convert_central_state_dependent_params",
-            "\n    struct zmk_behavior_binding *binding, struct zmk_behavior_binding_event event"
-        ],
-        "behavior.h",
-        true
-    ],
-    [
-        [
-            "int behavior_get_locality",
-            "const struct device *behavior,\n                                    enum behavior_locality *locality"
-        ],
-        "behavior.h",
-        true
-    ],
-    [
-        [
-            "int behavior_keymap_binding_pressed",
-            "struct zmk_behavior_binding *binding,\n                                              struct zmk_behavior_binding_event event"
-        ],
-        "behavior.h",
-        true
-    ],
-    [
-        [
-            "int behavior_keymap_binding_released",
-            "struct zmk_behavior_binding *binding,\n                                               struct zmk_behavior_binding_event event"
-        ],
-        "behavior.h",
-        true
-    ],
-    [
-        [
-            "int behavior_sensor_keymap_binding_accept_data",
-            "\n    struct zmk_behavior_binding *binding, struct zmk_behavior_binding_event event,\n    const struct zmk_sensor_config *sensor_config, size_t channel_data_size,\n    const struct zmk_sensor_channel_data *channel_data"
-        ],
-        "behavior.h",
-        true
-    ],
-    [
-        [
-            "int behavior_sensor_keymap_binding_process",
-            "\n    struct zmk_behavior_binding *binding,\n    struct zmk_behavior_binding_event event,\n    enum behavior_sensor_binding_process_mode mode"
-        ],
-        "behavior.h",
-        true
-    ],
-    [
-        [
-            "int ext_power_enable",
-            "const struct device *dev"
-        ],
-        "ext_power.h",
-        true
-    ],
-    [
-        [
-            "int ext_power_disable",
-            "const struct device *dev"
-        ],
-        "ext_power.h",
-        true
-    ],
-    [
-        [
-            "int ext_power_get",
-            "const struct device *dev"
-        ],
-        "ext_power.h",
-        true
-    ],
-    [
-        [
             "int sys_cache_data_flush_range",
             "void *addr, size_t size"
         ],
@@ -4102,5 +4022,85 @@
         ],
         "mem_manage.h",
         false
+    ],
+    [
+        [
+            "const struct device *behavior_get_binding",
+            "const char *name"
+        ],
+        "behavior.h",
+        true
+    ],
+    [
+        [
+            "int behavior_keymap_binding_convert_central_state_dependent_params",
+            "\n    struct zmk_behavior_binding *binding, struct zmk_behavior_binding_event event"
+        ],
+        "behavior.h",
+        true
+    ],
+    [
+        [
+            "int behavior_get_locality",
+            "const struct device *behavior,\n                                    enum behavior_locality *locality"
+        ],
+        "behavior.h",
+        true
+    ],
+    [
+        [
+            "int behavior_keymap_binding_pressed",
+            "struct zmk_behavior_binding *binding,\n                                              struct zmk_behavior_binding_event event"
+        ],
+        "behavior.h",
+        true
+    ],
+    [
+        [
+            "int behavior_keymap_binding_released",
+            "struct zmk_behavior_binding *binding,\n                                               struct zmk_behavior_binding_event event"
+        ],
+        "behavior.h",
+        true
+    ],
+    [
+        [
+            "int behavior_sensor_keymap_binding_accept_data",
+            "\n    struct zmk_behavior_binding *binding, struct zmk_behavior_binding_event event,\n    const struct zmk_sensor_config *sensor_config, size_t channel_data_size,\n    const struct zmk_sensor_channel_data *channel_data"
+        ],
+        "behavior.h",
+        true
+    ],
+    [
+        [
+            "int behavior_sensor_keymap_binding_process",
+            "\n    struct zmk_behavior_binding *binding,\n    struct zmk_behavior_binding_event event,\n    enum behavior_sensor_binding_process_mode mode"
+        ],
+        "behavior.h",
+        true
+    ],
+    [
+        [
+            "int ext_power_enable",
+            "const struct device *dev"
+        ],
+        "ext_power.h",
+        true
+    ],
+    [
+        [
+            "int ext_power_disable",
+            "const struct device *dev"
+        ],
+        "ext_power.h",
+        true
+    ],
+    [
+        [
+            "int ext_power_get",
+            "const struct device *dev"
+        ],
+        "ext_power.h",
+        true
     ]
 ]

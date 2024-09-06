@@ -1,4 +1,4 @@
-if BOARD_PYGMY_RIGHT
+if BOARD_ORCA_RIGHT
 # define right side as central
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
@@ -16,10 +16,10 @@ config ZMK_SPLIT
     default y
 
 config ZMK_KEYBOARD_NAME
-    default "Pygmy"
+    default "orca"
 
 config BOARD
-    default "pygmy"
+    default "orca"
 
 if USB
 

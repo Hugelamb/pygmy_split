@@ -1,7 +1,7 @@
 {
     "__net_socket": [
-        "modem_socket",
         "net_context",
+        "modem_socket",
         "dispatcher_context",
         "spair",
         "net_mgmt_socket",
@@ -16,8 +16,6 @@
         "kscan_driver_api",
         "sensor_driver_api",
         "spi_driver_api",
-        "behavior_driver_api",
-        "ext_power_api",
         "crypto_driver_api",
         "auxdisplay_driver_api",
         "bbram_driver_api",
@@ -71,6 +69,8 @@
         "tcpc_driver_api",
         "ivshmem_driver_api",
         "ec_host_cmd_backend_api",
-        "ethphy_driver_api"
+        "ethphy_driver_api",
+        "behavior_driver_api",
+        "ext_power_api"
     ]
 }

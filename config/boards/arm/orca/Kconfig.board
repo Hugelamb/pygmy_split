@@ -1,17 +1,17 @@
-# Pygmy board configuration
+# Orca board configuration
 
 # Copyright (c) 2024 Hugh Lam
 # SPDX-License-Identifier: MIT
 
-config BOARD_PYGMY
-	bool "pygmy"
+config BOARD_ORCA
+	bool "orca"
 	depends on SOC_NRF52840_QIAA
 
-config BOARD_PYGMY_RIGHT
-	bool "pygmy right"
+config BOARD_ORCA_RIGHT
+	bool "orca right"
 	depends on SOC_NRF52840_QIAA
 
 
-config BOARD_PYGMY_LEFT
-	bool "pygmy left"
+config BOARD_ORCA_LEFT
+	bool "orca left"
 	depends on SOC_NRF52840_QIAA

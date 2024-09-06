@@ -16,9 +16,7 @@
 
 #define Z_SYSCALL_DRIVER_SENSOR(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, sensor, SENSOR)
 
-#define Z_SYSCALL_DRIVER_BEHAVIOR(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, behavior, BEHAVIOR)
-
-#define Z_SYSCALL_DRIVER_EXT_POWER_API(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, ext_power_api, EXT_POWER_API)
+#define Z_SYSCALL_DRIVER_SPI(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, spi, SPI)
 
 #define Z_SYSCALL_DRIVER_CRYPTO(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, crypto, CRYPTO)
 
@@ -96,8 +94,6 @@
 
 #define Z_SYSCALL_DRIVER_SMBUS(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, smbus, SMBUS)
 
-#define Z_SYSCALL_DRIVER_SPI(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, spi, SPI)
-
 #define Z_SYSCALL_DRIVER_SYSCON(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, syscon, SYSCON)
 
 #define Z_SYSCALL_DRIVER_UART(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, uart, UART)
@@ -129,4 +125,8 @@
 #define Z_SYSCALL_DRIVER_EC_HOST_CMD_BACKEND_API(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, ec_host_cmd_backend_api, EC_HOST_CMD_BACKEND_API)
 
 #define Z_SYSCALL_DRIVER_ETHPHY(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, ethphy, ETHPHY)
+
+#define Z_SYSCALL_DRIVER_BEHAVIOR(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, behavior, BEHAVIOR)
+
+#define Z_SYSCALL_DRIVER_EXT_POWER_API(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, ext_power_api, EXT_POWER_API)
 #endif /* DRIVER_VALIDATION_GEN_H */

@@ -1,13 +1,14 @@
 /* 
  *  Created by Hugh Lam (2024)
  *
- *  Pygmy keymap
+ *  orca keymap
  */
 
  #include <behaviors.dtsi>
  #include <dt-bindings/zmk/keys.h>
  #include <dt-bindings/zmk/bt.h>
  #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
 
 // Layer defines
 #define DEF 0
@@ -101,7 +102,7 @@
             display-name = "DEF";
 
             bindings = <
-&kp Q       &kp W       &kp E       &kp R           &kp T                   &kp Y       &kp U           &kp I           &kp O           &kp P
+&kp Q       &kp W       &kp E       &kp R           &kp T                   &kp Y       &rgb_ug RGB_TOG &kp I           &kp O           &kp P
 &mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F     &kp G                   &kp H       &mt RSHFT J     &mt LCTRL K     &mt LALT L      &mt LGUI SEMI   
 &kp Z       &kp X       &kp C       &kp V           &kp B                   &kp N       &kp M           &kp COMMA       &kp DOT         &kp FSLH
                                     &mt LCTRL ESC   &lt NAV SPC             &lt SYM RET &bs_del

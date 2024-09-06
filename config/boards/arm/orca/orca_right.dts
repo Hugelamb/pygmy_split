@@ -1,53 +1,53 @@
 /* 
  *  Created by Hugh Lam (2024)
  *
- *  Pygmy .dts file.
+ *  orca .dts file.
  */
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/led/led.h>
 
 // Display Pins
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 29)>
-                  , <NRF_PSEL(SPIM_MOSI, 0, 28)>
-                  , <NRF_PSEL(SPIM_MISO, 0, 11)>    // Not connected
+            psels = <NRF_PSEL(SPIM_SCK, 0, 21)>
+                  , <NRF_PSEL(SPIM_MOSI, 0, 19)>
+                  , <NRF_PSEL(SPIM_MISO, 0, 12)>    // Not connected
 	          ;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 29)>
-                  , <NRF_PSEL(SPIM_MOSI, 0, 28)>
-                  , <NRF_PSEL(SPIM_MISO, 0, 11)>    // Not connected
+            psels = <NRF_PSEL(SPIM_SCK, 0, 21)>
+                  , <NRF_PSEL(SPIM_MOSI, 0, 19)>
+                  , <NRF_PSEL(SPIM_MISO, 0, 12)>    // Not connected
 	          ;
             low-power-enable;
         };
     };
-
     // RGB pins
-    spi3_default: spi3_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 28)>;
-        };
-    };
+    // spi3_default: spi3_default {
+    //     group1 {
+    //         psels = <NRF_PSEL(SPIM_MOSI, 0, 28)>;
+    //     };
+    // };
 
-    spi3_sleep: spi3_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 28)>;
-            low-power-enable;
-        };
-    };
+    // spi3_sleep: spi3_sleep {
+    //     group1 {
+    //         psels = <NRF_PSEL(SPIM_MOSI, 0, 28)>;
+    //         low-power-enable;
+    //     };
+    // };
 };
 
 
 / {
-    model = "pygmy";
-    compatible = "pygmy";
+    model = "orca";
+    compatible = "orca";
     chosen {
         zephyr,code-partition = &code_partition;
 		zephyr,sram = &sram0;
@@ -63,7 +63,7 @@
     leds {
         compatible = "gpio-leds";
         blue_led: led_0 {
-			gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio1  9 GPIO_ACTIVE_HIGH>;
 			label = "Blue LED";
         };
     };
@@ -78,7 +78,7 @@
     ext-power {
         compatible = "zmk,ext-power-generic";
 		label = "EXT_POWER";
-		control-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
+		control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
 		init-delay-ms = <50>;
     };
 
@@ -100,28 +100,32 @@
 		label = "KSCAN";
 
         input-gpios
-            = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 1
-            , <&gpio1  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 2
-            , <&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 3
-            , <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ...
-            , <&gpio0  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            = <&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 1
+            , <&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 2
+            , <&gpio1  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 3
+            , <&gpio1  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ...
+            , <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
-            , <&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+
+            , <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio1  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // same for left and right
-            , <&gpio1  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 26 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
-            , <&gpio0  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio1  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-
-            , <&gpio0  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 16
-            , <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 17
+            , <&gpio0  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 16
+            , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 17
             ;
 	};
+};
+
+&transform {
+    col-offset = <17>;
 };
 
 &adc {
@@ -148,42 +152,42 @@
 	pinctrl-1 = <&spi0_default>;
 	pinctrl-names = "default", "sleep";
 
-	cs-gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>;
+	cs-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
 
     ls0xx: ls0xx@0 {
 		compatible = "sharp,ls0xx";
 		spi-max-frequency = <2000000>;
 		reg = <0>;
-		width = <144>;
+		width = <68>;
 		height = <168>;
 		// disp-en-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
 	};
 };
 
-&spi3 {
-  compatible = "nordic,nrf-spim";
-  status = "okay";
+// &spi3 {
+//   compatible = "nordic,nrf-spim";
+//   status = "okay";
 
-  pinctrl-0 = <&spi3_default>;
-  pinctrl-1 = <&spi3_sleep>;
-  pinctrl-names = "default", "sleep";
+//   pinctrl-0 = <&spi3_default>;
+//   pinctrl-1 = <&spi3_sleep>;
+//   pinctrl-names = "default", "sleep";
 
-  led_strip: ws2812@0 {
-    compatible = "worldsemi,ws2812-spi";
+//   led_strip: ws2812@0 {
+//     compatible = "worldsemi,ws2812-spi";
 
-    /* SPI */
-    reg = <0>; /* ignored, but necessary for SPI bindings */
-    spi-max-frequency = <4000000>;
+//     /* SPI */
+//     reg = <0>; /* ignored, but necessary for SPI bindings */
+//     spi-max-frequency = <4000000>;
 
-    /* WS2812 */
-    chain-length = <17>; /* number of LEDs */
-    spi-one-frame = <0x70>;
-    spi-zero-frame = <0x40>;
-    color-mapping = <LED_COLOR_ID_GREEN
-                          LED_COLOR_ID_RED
-                          LED_COLOR_ID_BLUE>;
-  };
-};
+//     /* WS2812 */
+//     chain-length = <17>; /* number of LEDs */
+//     spi-one-frame = <0x70>;
+//     spi-zero-frame = <0x40>;
+//     color-mapping = <0
+//                           100
+//                           0>;
+//   };
+// };
 
 &usbd {
   status = "okay";

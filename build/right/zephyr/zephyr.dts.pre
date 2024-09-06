@@ -1401,7 +1401,9 @@
 # 10 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap" 2
 # 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/ext_power.h" 1 3 4
 # 11 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap" 2
-# 29 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+# 1 "C:/Users/Hugh/zmk/app/include/dt-bindings/zmk/rgb.h" 1 3 4
+# 12 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap" 2
+# 30 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
 &mt {
     flavor = "hold-preferred";
     tapping-term-ms = <200>;
@@ -1423,7 +1425,7 @@
 
 / {
     behaviors {
-# 58 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+# 59 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
         bs_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -1436,9 +1438,9 @@
 
     macros {
         inv_qm: inv_qm { compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms = <10>; tap-ms = <10>; bindings = <&macro_press &kp (((((0x07) << 16) | (0xE2))))> , <&macro_tap &kp (((((0x07) << 16) | (0x59)))) &kp (((((0x07) << 16) | (0x5E)))) &kp (((((0x07) << 16) | (0x60))))> , <&macro_release &kp (((((0x07) << 16) | (0xE2))))>; };
-# 86 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+# 87 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
     };
-# 97 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
+# 98 "C:/Users/Hugh/pygmy_split/config/boards/arm/pygmy_split/pygmy.keymap"
     keymap {
         compatible = "zmk,keymap";
 
@@ -1446,7 +1448,7 @@
             display-name = "DEF";
 
             bindings = <
-&kp ((((0x07) << 16) | (0x14))) &kp ((((0x07) << 16) | (0x1A))) &kp ((((0x07) << 16) | (0x08))) &kp ((((0x07) << 16) | (0x15))) &kp ((((0x07) << 16) | (0x17))) &kp ((((0x07) << 16) | (0x1C))) &kp ((((0x07) << 16) | (0x18))) &kp ((((0x07) << 16) | (0x0C))) &kp ((((0x07) << 16) | (0x12))) &kp ((((0x07) << 16) | (0x13)))
+&kp ((((0x07) << 16) | (0x14))) &kp ((((0x07) << 16) | (0x1A))) &kp ((((0x07) << 16) | (0x08))) &kp ((((0x07) << 16) | (0x15))) &kp ((((0x07) << 16) | (0x17))) &kp ((((0x07) << 16) | (0x1C))) &rgb_ug 0 0 &kp ((((0x07) << 16) | (0x0C))) &kp ((((0x07) << 16) | (0x12))) &kp ((((0x07) << 16) | (0x13)))
 &mt (((((0x07) << 16) | (0xE3)))) ((((0x07) << 16) | (0x04))) &mt (((((0x07) << 16) | (0xE2)))) ((((0x07) << 16) | (0x16))) &mt (((((0x07) << 16) | (0xE0)))) ((((0x07) << 16) | (0x07))) &mt (((((0x07) << 16) | (0xE1)))) ((((0x07) << 16) | (0x09))) &kp ((((0x07) << 16) | (0x0A))) &kp ((((0x07) << 16) | (0x0B))) &mt (((((0x07) << 16) | (0xE5)))) ((((0x07) << 16) | (0x0D))) &mt (((((0x07) << 16) | (0xE0)))) ((((0x07) << 16) | (0x0E))) &mt (((((0x07) << 16) | (0xE2)))) ((((0x07) << 16) | (0x0F))) &mt (((((0x07) << 16) | (0xE3)))) (((((0x07) << 16) | (0x33))))
 &kp ((((0x07) << 16) | (0x1D))) &kp ((((0x07) << 16) | (0x1B))) &kp ((((0x07) << 16) | (0x06))) &kp ((((0x07) << 16) | (0x19))) &kp ((((0x07) << 16) | (0x05))) &kp ((((0x07) << 16) | (0x11))) &kp ((((0x07) << 16) | (0x10))) &kp ((((0x07) << 16) | (0x36))) &kp (((((0x07) << 16) | (0x37)))) &kp (((((0x07) << 16) | (0x38))))
                                     &mt (((((0x07) << 16) | (0xE0)))) (((((0x07) << 16) | (0x29)))) &lt 3 (((((0x07) << 16) | (0x2C)))) &lt 2 (((((0x07) << 16) | (0x28)))) &bs_del

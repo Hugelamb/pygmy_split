@@ -1,5 +1,5 @@
-identifier: pygmy
-name: Pygmy
+identifier: orca
+name: orca
 type: keyboard
 arch: arm
 toolchain:
