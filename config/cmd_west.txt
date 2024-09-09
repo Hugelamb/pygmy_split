@@ -1,0 +1,1 @@
+west build -d [output directory] -b board_name --pristine -- -DZMK_CONFIG="absolute_path_to_config"

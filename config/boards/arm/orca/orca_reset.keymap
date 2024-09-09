@@ -2,6 +2,7 @@
  *  Created by Hugh Lam (2024)
  *
  *  orca keymap
+ *  this keymap is specifically for resetting the device and flashing to new boards
  */
 
  #include <behaviors.dtsi>
@@ -11,7 +12,7 @@
  #include <dt-bindings/zmk/rgb.h>
 
 // Layer defines
-#define DEF 0
+#define RES 0
 #define COL 1
 #define SYM 2       // Commonly used symbols, such as theta, omega, beta, alpha, etc
 #define NAV 3       // arrow keys, PGUP/PGDN, back, forward, window swappers, 
@@ -98,12 +99,12 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "DEF";
+        reset_layer {
+            display-name = "RES";
 
             bindings = <
-&kp Q       &kp W       &kp E       &kp R           &kp T                   &kp Y       &kp U           &kp I           &kp O           &kp P
-&mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F     &kp G                   &kp H       &mt RSHFT J     &mt LCTRL K     &mt LALT L      &mt LGUI SEMI   
+&kp Q       &kp W       &kp E       &kp R           &sys_reset              &sys_reset       &kp U           &kp I           &kp O           &kp P
+&mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F     &kp G                   &kp H       &bt BT_CLR      &mt LCTRL K     &mt LALT L      &mt LGUI SEMI   
 &kp Z       &kp X       &kp C       &kp V           &kp B                   &kp N       &kp M           &kp COMMA       &kp DOT         &kp FSLH
                                     &mt LCTRL ESC   &lt NAV SPC             &lt SYM RET &bs_del
             
@@ -123,20 +124,20 @@
         symbol_layer {
             display-name = "SYM";
             bindings = <
-&kp EXCL    &kp AT      &kp HASH        &kp DLLR        &kp PRCNT               &kp SLASH       &kp N7      &kp N8      &kp N9      &kp COMMA 
-&kp PLUS    &kp EQUAL   &kp UNDER       &kp MINUS       &kp CARET               &kp N0          &kp N4      &kp N5      &kp N6      &kp DOT   
-&mo FUN     &inv_qm     &kp STAR        &kp AMPS        &none                   &kp SEMI        &kp N1      &kp N2      &kp N3      &kp SLASH 
-                                        &kp BSPC        &trans                  &trans          &bs_del                               
+&kp EXCL    &kp AT      &kp HASH    &kp DLLR        &kp PRCNT               &kp SLASH       &kp N7      &kp N8      &kp N9      &kp COMMA 
+&kp PLUS    &kp EQUAL   &kp UNDER   &kp MINUS       &kp CARET               &kp N0          &kp N4      &kp N5      &kp N6      &kp DOT   
+&mo FUN     &inv_qm     &kp STAR    &kp AMPS        &none                   &kp SEMI        &kp N1      &kp N2      &kp N3      &kp SLASH 
+                                    &kp BSPC        &trans                  &trans          &bs_del                               
             >;
         };
 
         nav_layer {
             display-name = "NAV";
             bindings = <
-&kp LA(F4)  &kp TAB_LT  &kp TAB_RT      &kp LC(F4)      &kp C_VOL_UP            &kp INS         &kp PG_DN    &kp UP       &kp PG_UP    &kp C_AL_CALC 
-&kp LCTRL   &kp LGUI    &kp LALT        &mt LSHFT TAB   &kp C_VOL_DN            &kp HOME        &kp LEFT     &kp DOWN     &kp RIGHT    &kp END       
-&none       &none       &none           &kp LS(INS)     &kp C_PP                &none           &kp DEL      &kp C_PREV   &kp C_NEXT   &none         
-                                        &none           &trans                  &trans          &kp SPACE 
+&kp LA(F4)  &kp TAB_LT  &kp TAB_RT  &kp LC(F4)      &kp C_VOL_UP            &kp INS         &kp PG_DN   &kp UP       &kp PG_UP  &kp C_AL_CALC 
+&kp LCTRL   &kp LGUI    &kp LALT    &mt LSHFT TAB   &kp C_VOL_DN            &kp HOME        &kp LEFT    &kp DOWN     &kp RIGHT  &kp END       
+&none       &none       &none       &kp LS(INS)     &kp C_PP                &kp DEL         &kp C_PREV  &kp C_NEXT   &none      &none              
+                                    &none           &trans                  &trans          &trans 
             >;
 
         };
@@ -144,23 +145,25 @@
         fun_layer {
             display-name = "FUN";
             bindings = <
-&kp LA(F4)  &kp TAB_LT  &kp TAB_RT      &kp LC(F4)      &kp C_VOL_UP            &kp INS         &kp PG_DN    &kp UP       &kp PG_UP    &kp C_AL_CALC 
-&kp LCTRL   &kp LGUI    &kp LALT        &mt LSHFT TAB   &kp C_VOL_DN            &kp HOME        &kp LEFT     &kp DOWN     &kp RIGHT    &kp END       
-&rgb_ug     &mo DEF     &none           &kp LS(INS)     &kp C_PP                &none           &kp DEL      &kp C_PREV   &kp C_NEXT   &none         
-                                        &none           &trans                  &trans          &kp SPACE 
+&kp F1      &kp F2      &kp F3      &kp F4          &kp F5                  &out OUT_USB    &out OUT_BLE    &to DEF             &to COL             &trans
+&kp F6      &kp F7      &kp F8      &kp F9          &kp F10                 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4
+&none       &kp D_LT    &kp D_RT    &kp F11         &kp F12                 &none           &kp CAPS        &ext_power EP_ON    &ext_power EP_OFF   &trans
+                                    &none           &trans                  &trans          &trans 
             >;
 
         };
 
-        sys_layer {
-            display-name = "SYS";
+        spare_layer {
+            display-name = "SPR";
             bindings = <
-&kp LA(F4)  &kp TAB_LT  &kp TAB_RT      &kp LC(F4)      &kp C_VOL_UP            &kp INS         &kp PG_DN    &kp UP       &kp PG_UP    &kp C_AL_CALC 
-&kp LCTRL   &kp LGUI    &kp LALT        &mt LSHFT TAB   &kp C_VOL_DN            &kp HOME        &kp LEFT     &kp DOWN     &kp RIGHT    &kp END       
-&none       &none       &none           &kp LS(INS)     &kp C_PP                &none           &kp DEL      &kp C_PREV   &kp C_NEXT   &none         
-                                        &none           &trans                  &trans          &kp SPACE 
+&kp F1      &kp F2      &kp F3      &kp F4          &kp F5                  &out OUT_USB    &out OUT_BLE    &to DEF             &to COL             &trans
+&kp F6      &kp F7      &kp F8      &kp F9          &kp F10                 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4
+&none       &kp D_LT    &kp D_RT    &kp F11         &kp F12                 &none           &kp CAPS        &ext_power EP_ON    &ext_power EP_OFF   &trans
+                                    &none           &trans                  &trans          &trans 
+            
+            
+            
             >;
-
-        };
+        }
     };
 };

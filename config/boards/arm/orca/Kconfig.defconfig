@@ -1,25 +1,16 @@
-if BOARD_ORCA_RIGHT
-# define right side as central
+if BOARD_ORCA_LEFT
+# define left side as central
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
-
-config ZMK_BLE
-	default y
-
-config ZMK_USB
-	default y
-
+    
 endif
 
 config ZMK_SPLIT
     default y
 
 config ZMK_KEYBOARD_NAME
-    default "orca"
-
-config BOARD
-    default "orca"
+    default "Orca"
 
 if USB
 
@@ -28,10 +19,17 @@ config USB_NRFX
 
 config USB_DEVICE_STACK
     default y
-    endif # USB
+
+endif # USB
 
 config BT_CTLR
     default BT
+
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
 
 # display definitions
 

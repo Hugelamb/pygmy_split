@@ -4,30 +4,8 @@
  *  orca .dts file.
  */
 
-/dts-v1/;
-#include <nordic/nrf52840_qiaa.dtsi>
-#include <dt-bindings/zmk/matrix_transform.h>
-
-// Display Pins
-&pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 21)>
-                  , <NRF_PSEL(SPIM_MOSI, 0, 19)>
-                  , <NRF_PSEL(SPIM_MISO, 0, 12)>    // Not connected
-	          ;
-        };
-    };
-
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 21)>
-                  , <NRF_PSEL(SPIM_MOSI, 0, 19)>
-                  , <NRF_PSEL(SPIM_MISO, 0, 12)>    // Not connected
-	          ;
-            low-power-enable;
-        };
-    };
+// /dts-v1/;
+#include "orca_base.dts"
 
     // RGB pins
     // spi3_default: spi3_default {
@@ -42,7 +20,6 @@
     //         low-power-enable;
     //     };
     // };
-};
 
 
 / {
@@ -57,58 +34,23 @@
 		zmk,matrix_transform = &transform;
 		zmk,battery = &vbatt;
 		zephyr,console = &cdc_acm_uart;
-        zmk,underglow = &led_strip;
+        // zmk,underglow = &led_strip;
     };
 
-    leds {
-        compatible = "gpio-leds";
-        blue_led: led_0 {
-			gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
-			label = "Blue LED";
-        };
-    };
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-voltage-divider";
-        io-channels = <&adc 7>;
-        output-ohms = <2000000>;
-		full-ohms = <(2000000 + 806000)>;
-    };
-
-    ext-power {
-        compatible = "zmk,ext-power-generic";
-		label = "EXT_POWER";
-		control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
-		init-delay-ms = <50>;
-    };
-
-#define K(n) RC(0,n)
-	transform: transform {
-		compatible = "zmk,matrix-transform";
-		columns = <10>;
-		rows = <4>;
-
-		map = <
-        K(0)  K(1)  K(2)  K(3)  K(4)                  K(21) K(20) K(19) K(18) K(17)
-        K(5)  K(6)  K(7)  K(8)  K(9)                  K(26) K(25) K(24) K(23) K(22) 
-        K(10) K(11) K(12) K(13) K(14)                 K(31) K(30) K(29) K(28) K(27)
-                          K(15) K(16)                 K(33) K(32)
-	>;
-	};
     kscan: kscan {
 		compatible = "zmk,kscan-gpio-direct";
 		label = "KSCAN";
 
         input-gpios
             = <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 1
-            , <&gpio1  15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 2
-            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 3
-            , <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ...
-            , <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 2
+            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 3    at 0V
+            , <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // ...
+            , <&gpio1  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
             , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 28(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // same for left and right
+            , <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // at ~ 1V
             , <&gpio1  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio1  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
@@ -119,7 +61,7 @@
             , <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
             , <&gpio1  10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 16
-            , <&gpio1  11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 17
+            , <&gpio1  11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 17  at 0V
             ;
 	};
 };
@@ -134,32 +76,20 @@
 
 &gpio0 {
 	status = "okay";
+    // troubleshoot0 {
+    //     gpio-hog;
+    //     gpios = <29 GPIO_ACTIVE_HIGH>;
+    //     output-high;
+    // };
 };
 
 &gpio1 {
 	status = "okay";
-};
-
-&spi0 {
-    compatible = "nordic,nrf-spim";
-	status = "okay";
-
-	pinctrl-0 = <&spi0_default>;
-	pinctrl-1 = <&spi0_default>;
-	pinctrl-names = "default", "sleep";
-
-	cs-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
-
-    ls0xx: ls0xx@0 {
-		compatible = "sharp,ls0xx";
-		spi-max-frequency = <2000000>;
-		reg = <0>;
-		width = <68>;
-		height = <160>;
-		// disp-en-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
-	};
-};
-
+    // troubleshoot1 {
+    //     gpio-hog;
+    //     gpios = <4 GPIO_ACTIVE_HIGH>,   // isn't connected to its switch socket, however socket seems to be sourcing 1V from somewhere?
+    //
+};         
 // &spi3 {
 //   compatible = "nordic,nrf-spim";
 //   status = "okay";
@@ -177,13 +107,7 @@
 
 //     /* WS2812 */
 //     chain-length = <17>; /* number of LEDs */
-//     spi-one-frame = <0x70>;
-//     spi-zero-frame = <0x40>;
-//     color-mapping = <LED_COLOR_ID_GREEN
-//                           LED_COLOR_ID_RED
-//                           LED_COLOR_ID_BLUE>;
-//   };
-// };
+//     spi-on
 
 &usbd {
   status = "okay";

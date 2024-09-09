@@ -18,7 +18,7 @@
 #
 ---
 include: 
-  - board: pygmy_left
-    artifact-name: pygmy_left
-  - board: pygmy_right
-      artifact-name: pygmy_right
+  - board: orca_left
+    artifact-name: orca_left
+  - board: orca_right
+      artifact-name: orca_right
